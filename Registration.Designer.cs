@@ -159,7 +159,6 @@ namespace OtdelZasel
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "Registration";
             this.Text = "Registration";
-            this.Load += new System.EventHandler(this.Registration_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

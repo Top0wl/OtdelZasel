@@ -17,9 +17,5 @@ namespace OtdelZasel
             InitializeComponent();
         }
 
-        private void WorkerWindow_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }

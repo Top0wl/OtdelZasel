@@ -29,81 +29,82 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.tabControl_Petitions = new System.Windows.Forms.TabControl();
+            this.tabPage_Petitions = new System.Windows.Forms.TabPage();
+            this.richTextBox_Message = new System.Windows.Forms.RichTextBox();
+            this.button_Reject = new System.Windows.Forms.Button();
+            this.button_Accept = new System.Windows.Forms.Button();
             this.qwertty = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.dataGridView3 = new System.Windows.Forms.DataGridView();
-            this.button3 = new System.Windows.Forms.Button();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.dataGridView4 = new System.Windows.Forms.DataGridView();
-            this.tabControl1.SuspendLayout();
-            this.tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
-            this.tabPage3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
+            this.dataGridView_Petitions = new System.Windows.Forms.DataGridView();
+            this.tabPage_CheckIn = new System.Windows.Forms.TabPage();
+            this.dataGridView_FreePlaces = new System.Windows.Forms.DataGridView();
+            this.button_CheckInCitizen = new System.Windows.Forms.Button();
+            this.dataGridView_CitizensForCheckIn = new System.Windows.Forms.DataGridView();
+            this.tabPage_ChechOut = new System.Windows.Forms.TabPage();
+            this.checkBox_CheckOutWithPetitions = new System.Windows.Forms.CheckBox();
+            this.dataGridView_CitizensForCheckOut = new System.Windows.Forms.DataGridView();
+            this.button_CheckOut = new System.Windows.Forms.Button();
+            this.tabControl_Petitions.SuspendLayout();
+            this.tabPage_Petitions.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Petitions)).BeginInit();
+            this.tabPage_CheckIn.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_FreePlaces)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_CitizensForCheckIn)).BeginInit();
+            this.tabPage_ChechOut.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_CitizensForCheckOut)).BeginInit();
             this.SuspendLayout();
             // 
-            // tabControl1
+            // tabControl_Petitions
             // 
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Controls.Add(this.tabPage3);
-            this.tabControl1.Location = new System.Drawing.Point(12, 12);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1162, 643);
-            this.tabControl1.TabIndex = 0;
+            this.tabControl_Petitions.Controls.Add(this.tabPage_Petitions);
+            this.tabControl_Petitions.Controls.Add(this.tabPage_CheckIn);
+            this.tabControl_Petitions.Controls.Add(this.tabPage_ChechOut);
+            this.tabControl_Petitions.Location = new System.Drawing.Point(12, 12);
+            this.tabControl_Petitions.Name = "tabControl_Petitions";
+            this.tabControl_Petitions.SelectedIndex = 0;
+            this.tabControl_Petitions.Size = new System.Drawing.Size(1162, 643);
+            this.tabControl_Petitions.TabIndex = 0;
             // 
-            // tabPage1
+            // tabPage_Petitions
             // 
-            this.tabPage1.Controls.Add(this.richTextBox1);
-            this.tabPage1.Controls.Add(this.button2);
-            this.tabPage1.Controls.Add(this.button1);
-            this.tabPage1.Controls.Add(this.qwertty);
-            this.tabPage1.Controls.Add(this.dataGridView1);
-            this.tabPage1.Location = new System.Drawing.Point(4, 24);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1154, 615);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Заяление";
-            this.tabPage1.UseVisualStyleBackColor = true;
+            this.tabPage_Petitions.Controls.Add(this.richTextBox_Message);
+            this.tabPage_Petitions.Controls.Add(this.button_Reject);
+            this.tabPage_Petitions.Controls.Add(this.button_Accept);
+            this.tabPage_Petitions.Controls.Add(this.qwertty);
+            this.tabPage_Petitions.Controls.Add(this.dataGridView_Petitions);
+            this.tabPage_Petitions.Location = new System.Drawing.Point(4, 24);
+            this.tabPage_Petitions.Name = "tabPage_Petitions";
+            this.tabPage_Petitions.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage_Petitions.Size = new System.Drawing.Size(1154, 615);
+            this.tabPage_Petitions.TabIndex = 0;
+            this.tabPage_Petitions.Text = "Заявления";
+            this.tabPage_Petitions.UseVisualStyleBackColor = true;
             // 
-            // richTextBox1
+            // richTextBox_Message
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(674, 450);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(425, 76);
-            this.richTextBox1.TabIndex = 5;
-            this.richTextBox1.Text = "";
+            this.richTextBox_Message.Location = new System.Drawing.Point(674, 450);
+            this.richTextBox_Message.Name = "richTextBox_Message";
+            this.richTextBox_Message.Size = new System.Drawing.Size(425, 76);
+            this.richTextBox_Message.TabIndex = 5;
+            this.richTextBox_Message.Text = "";
             // 
-            // button2
+            // button_Reject
             // 
-            this.button2.Location = new System.Drawing.Point(966, 532);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(133, 41);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "Отклонить";
-            this.button2.UseVisualStyleBackColor = true;
+            this.button_Reject.Location = new System.Drawing.Point(966, 532);
+            this.button_Reject.Name = "button_Reject";
+            this.button_Reject.Size = new System.Drawing.Size(133, 41);
+            this.button_Reject.TabIndex = 3;
+            this.button_Reject.Text = "Отклонить";
+            this.button_Reject.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // button_Accept
             // 
-            this.button1.Location = new System.Drawing.Point(674, 532);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(145, 41);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Принять";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button_Accept.Location = new System.Drawing.Point(674, 532);
+            this.button_Accept.Name = "button_Accept";
+            this.button_Accept.Size = new System.Drawing.Size(145, 41);
+            this.button_Accept.TabIndex = 2;
+            this.button_Accept.Text = "Принять";
+            this.button_Accept.UseVisualStyleBackColor = true;
             // 
             // qwertty
             // 
@@ -114,125 +115,135 @@
             this.qwertty.TabIndex = 1;
             this.qwertty.Text = "Поля";
             // 
-            // dataGridView1
+            // dataGridView_Petitions
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 3);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(628, 570);
-            this.dataGridView1.TabIndex = 0;
+            this.dataGridView_Petitions.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView_Petitions.Location = new System.Drawing.Point(3, 3);
+            this.dataGridView_Petitions.Name = "dataGridView_Petitions";
+            this.dataGridView_Petitions.RowTemplate.Height = 25;
+            this.dataGridView_Petitions.Size = new System.Drawing.Size(628, 570);
+            this.dataGridView_Petitions.TabIndex = 0;
             // 
-            // tabPage2
+            // tabPage_CheckIn
             // 
-            this.tabPage2.Controls.Add(this.dataGridView3);
-            this.tabPage2.Controls.Add(this.button3);
-            this.tabPage2.Controls.Add(this.dataGridView2);
-            this.tabPage2.Location = new System.Drawing.Point(4, 24);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1154, 615);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Заселение";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            this.tabPage_CheckIn.Controls.Add(this.dataGridView_FreePlaces);
+            this.tabPage_CheckIn.Controls.Add(this.button_CheckInCitizen);
+            this.tabPage_CheckIn.Controls.Add(this.dataGridView_CitizensForCheckIn);
+            this.tabPage_CheckIn.Location = new System.Drawing.Point(4, 24);
+            this.tabPage_CheckIn.Name = "tabPage_CheckIn";
+            this.tabPage_CheckIn.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage_CheckIn.Size = new System.Drawing.Size(1154, 615);
+            this.tabPage_CheckIn.TabIndex = 1;
+            this.tabPage_CheckIn.Text = "Заселение";
+            this.tabPage_CheckIn.UseVisualStyleBackColor = true;
             // 
-            // dataGridView3
+            // dataGridView_FreePlaces
             // 
-            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.Location = new System.Drawing.Point(625, 3);
-            this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.RowTemplate.Height = 25;
-            this.dataGridView3.Size = new System.Drawing.Size(526, 406);
-            this.dataGridView3.TabIndex = 2;
+            this.dataGridView_FreePlaces.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView_FreePlaces.Location = new System.Drawing.Point(625, 3);
+            this.dataGridView_FreePlaces.Name = "dataGridView_FreePlaces";
+            this.dataGridView_FreePlaces.RowTemplate.Height = 25;
+            this.dataGridView_FreePlaces.Size = new System.Drawing.Size(526, 406);
+            this.dataGridView_FreePlaces.TabIndex = 2;
             // 
-            // button3
+            // button_CheckInCitizen
             // 
-            this.button3.Location = new System.Drawing.Point(14, 551);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(161, 52);
-            this.button3.TabIndex = 1;
-            this.button3.Text = "Заселить";
-            this.button3.UseVisualStyleBackColor = true;
+            this.button_CheckInCitizen.Location = new System.Drawing.Point(14, 551);
+            this.button_CheckInCitizen.Name = "button_CheckInCitizen";
+            this.button_CheckInCitizen.Size = new System.Drawing.Size(161, 52);
+            this.button_CheckInCitizen.TabIndex = 1;
+            this.button_CheckInCitizen.Text = "Заселить";
+            this.button_CheckInCitizen.UseVisualStyleBackColor = true;
             // 
-            // dataGridView2
+            // dataGridView_CitizensForCheckIn
             // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(3, 3);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowTemplate.Height = 25;
-            this.dataGridView2.Size = new System.Drawing.Size(573, 406);
-            this.dataGridView2.TabIndex = 0;
+            this.dataGridView_CitizensForCheckIn.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView_CitizensForCheckIn.Location = new System.Drawing.Point(3, 3);
+            this.dataGridView_CitizensForCheckIn.Name = "dataGridView_CitizensForCheckIn";
+            this.dataGridView_CitizensForCheckIn.RowTemplate.Height = 25;
+            this.dataGridView_CitizensForCheckIn.Size = new System.Drawing.Size(573, 406);
+            this.dataGridView_CitizensForCheckIn.TabIndex = 0;
             // 
-            // tabPage3
+            // tabPage_ChechOut
             // 
-            this.tabPage3.Controls.Add(this.checkBox1);
-            this.tabPage3.Controls.Add(this.dataGridView4);
-            this.tabPage3.Location = new System.Drawing.Point(4, 24);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(1154, 615);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Выселение";
-            this.tabPage3.UseVisualStyleBackColor = true;
+            this.tabPage_ChechOut.Controls.Add(this.button_CheckOut);
+            this.tabPage_ChechOut.Controls.Add(this.checkBox_CheckOutWithPetitions);
+            this.tabPage_ChechOut.Controls.Add(this.dataGridView_CitizensForCheckOut);
+            this.tabPage_ChechOut.Location = new System.Drawing.Point(4, 24);
+            this.tabPage_ChechOut.Name = "tabPage_ChechOut";
+            this.tabPage_ChechOut.Size = new System.Drawing.Size(1154, 615);
+            this.tabPage_ChechOut.TabIndex = 2;
+            this.tabPage_ChechOut.Text = "Выселение";
+            this.tabPage_ChechOut.UseVisualStyleBackColor = true;
             // 
-            // checkBox1
+            // checkBox_CheckOutWithPetitions
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Checked = true;
-            this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox1.Location = new System.Drawing.Point(3, 424);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(158, 19);
-            this.checkBox1.TabIndex = 1;
-            this.checkBox1.Text = "Выселять по заявлению";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox_CheckOutWithPetitions.AutoSize = true;
+            this.checkBox_CheckOutWithPetitions.Checked = true;
+            this.checkBox_CheckOutWithPetitions.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox_CheckOutWithPetitions.Location = new System.Drawing.Point(3, 424);
+            this.checkBox_CheckOutWithPetitions.Name = "checkBox_CheckOutWithPetitions";
+            this.checkBox_CheckOutWithPetitions.Size = new System.Drawing.Size(158, 19);
+            this.checkBox_CheckOutWithPetitions.TabIndex = 1;
+            this.checkBox_CheckOutWithPetitions.Text = "Выселять по заявлению";
+            this.checkBox_CheckOutWithPetitions.UseVisualStyleBackColor = true;
             // 
-            // dataGridView4
+            // dataGridView_CitizensForCheckOut
             // 
-            this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView4.Location = new System.Drawing.Point(3, 3);
-            this.dataGridView4.Name = "dataGridView4";
-            this.dataGridView4.RowTemplate.Height = 25;
-            this.dataGridView4.Size = new System.Drawing.Size(531, 415);
-            this.dataGridView4.TabIndex = 0;
+            this.dataGridView_CitizensForCheckOut.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView_CitizensForCheckOut.Location = new System.Drawing.Point(3, 3);
+            this.dataGridView_CitizensForCheckOut.Name = "dataGridView_CitizensForCheckOut";
+            this.dataGridView_CitizensForCheckOut.RowTemplate.Height = 25;
+            this.dataGridView_CitizensForCheckOut.Size = new System.Drawing.Size(531, 415);
+            this.dataGridView_CitizensForCheckOut.TabIndex = 0;
+            // 
+            // button_CheckOut
+            // 
+            this.button_CheckOut.Location = new System.Drawing.Point(84, 486);
+            this.button_CheckOut.Name = "button_CheckOut";
+            this.button_CheckOut.Size = new System.Drawing.Size(241, 64);
+            this.button_CheckOut.TabIndex = 2;
+            this.button_CheckOut.Text = "Выселить";
+            this.button_CheckOut.UseVisualStyleBackColor = true;
             // 
             // WorkerWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1186, 667);
-            this.Controls.Add(this.tabControl1);
+            this.Controls.Add(this.tabControl_Petitions);
             this.Name = "WorkerWindow";
-            this.Text = "Form1";
-            this.Load += new System.EventHandler(this.WorkerWindow_Load);
-            this.tabControl1.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
-            this.tabPage1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.tabPage2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
-            this.tabPage3.ResumeLayout(false);
-            this.tabPage3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
+            this.Text = "Режим работника";
+            this.tabControl_Petitions.ResumeLayout(false);
+            this.tabPage_Petitions.ResumeLayout(false);
+            this.tabPage_Petitions.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Petitions)).EndInit();
+            this.tabPage_CheckIn.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_FreePlaces)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_CitizensForCheckIn)).EndInit();
+            this.tabPage_ChechOut.ResumeLayout(false);
+            this.tabPage_ChechOut.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_CitizensForCheckOut)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.TabControl tabControl_Petitions;
+        private System.Windows.Forms.TabPage tabPage_Petitions;
+        private System.Windows.Forms.TabPage tabPage_CheckIn;
         private System.Windows.Forms.Label qwertty;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.RichTextBox richTextBox1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.DataGridView dataGridView3;
-        private System.Windows.Forms.TabPage tabPage3;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.DataGridView dataGridView4;
+        private System.Windows.Forms.DataGridView dataGridView_Petitions;
+        private System.Windows.Forms.RichTextBox richTextBox_Message;
+        private System.Windows.Forms.Button button_Reject;
+        private System.Windows.Forms.Button button_Accept;
+        private System.Windows.Forms.Button button_CheckInCitizen;
+        private System.Windows.Forms.DataGridView dataGridView_CitizensForCheckIn;
+        private System.Windows.Forms.DataGridView dataGridView_FreePlaces;
+        private System.Windows.Forms.TabPage tabPage_ChechOut;
+        private System.Windows.Forms.CheckBox checkBox_CheckOutWithPetitions;
+        private System.Windows.Forms.DataGridView dataGridView_CitizensForCheckOut;
+        private System.Windows.Forms.Button button_CheckOut;
     }
 }
