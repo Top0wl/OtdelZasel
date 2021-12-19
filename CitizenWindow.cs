@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace OtdelZasel
 {
-    public partial class Form1 : Form
+    public partial class CitizenWindow : Form
     {
-        public Form1()
+        public CitizenWindow()
         {
             InitializeComponent();
         }
