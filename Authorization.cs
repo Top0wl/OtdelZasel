@@ -47,6 +47,7 @@ namespace OtdelZasel
                 auth.Read();
                 int role = (int)auth.GetValue(0);
                 long id = (long)auth.GetValue(1);
+                Connection.getInstance().connection.Close();
                 if (role == 1)
                 {
                    // Application.Run(new WorkerWindow());
@@ -69,7 +70,6 @@ namespace OtdelZasel
                 {
                     MessageBox.Show("Неправильный логин или пароль");
                 }
-                Connection.getInstance().connection.Close();
             }
             catch (Exception ex)
             {

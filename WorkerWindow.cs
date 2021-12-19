@@ -28,7 +28,6 @@ namespace OtdelZasel
                 var sql = @"select * from loginuser(:login, :password)";
                 //Подключние команды
                 var cmd = new NpgsqlCommand(sql, Connection.getInstance().connection);
-
                 //Параметры
                 {
                     //cmd.Parameters.AddWithValue("login", login.Text);
