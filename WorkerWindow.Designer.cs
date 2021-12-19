@@ -41,9 +41,9 @@
             this.button_CheckInCitizen = new System.Windows.Forms.Button();
             this.dataGridView_CitizensForCheckIn = new System.Windows.Forms.DataGridView();
             this.tabPage_ChechOut = new System.Windows.Forms.TabPage();
+            this.button_CheckOut = new System.Windows.Forms.Button();
             this.checkBox_CheckOutWithPetitions = new System.Windows.Forms.CheckBox();
             this.dataGridView_CitizensForCheckOut = new System.Windows.Forms.DataGridView();
-            this.button_CheckOut = new System.Windows.Forms.Button();
             this.tabControl_Petitions.SuspendLayout();
             this.tabPage_Petitions.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Petitions)).BeginInit();
@@ -176,6 +176,15 @@
             this.tabPage_ChechOut.Text = "Выселение";
             this.tabPage_ChechOut.UseVisualStyleBackColor = true;
             // 
+            // button_CheckOut
+            // 
+            this.button_CheckOut.Location = new System.Drawing.Point(84, 486);
+            this.button_CheckOut.Name = "button_CheckOut";
+            this.button_CheckOut.Size = new System.Drawing.Size(241, 64);
+            this.button_CheckOut.TabIndex = 2;
+            this.button_CheckOut.Text = "Выселить";
+            this.button_CheckOut.UseVisualStyleBackColor = true;
+            // 
             // checkBox_CheckOutWithPetitions
             // 
             this.checkBox_CheckOutWithPetitions.AutoSize = true;
@@ -197,15 +206,6 @@
             this.dataGridView_CitizensForCheckOut.Size = new System.Drawing.Size(531, 415);
             this.dataGridView_CitizensForCheckOut.TabIndex = 0;
             // 
-            // button_CheckOut
-            // 
-            this.button_CheckOut.Location = new System.Drawing.Point(84, 486);
-            this.button_CheckOut.Name = "button_CheckOut";
-            this.button_CheckOut.Size = new System.Drawing.Size(241, 64);
-            this.button_CheckOut.TabIndex = 2;
-            this.button_CheckOut.Text = "Выселить";
-            this.button_CheckOut.UseVisualStyleBackColor = true;
-            // 
             // WorkerWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -214,6 +214,7 @@
             this.Controls.Add(this.tabControl_Petitions);
             this.Name = "WorkerWindow";
             this.Text = "Режим работника";
+            this.Load += new System.EventHandler(this.WorkerWindow_Load);
             this.tabControl_Petitions.ResumeLayout(false);
             this.tabPage_Petitions.ResumeLayout(false);
             this.tabPage_Petitions.PerformLayout();
