@@ -16,5 +16,10 @@ namespace OtdelZasel
         {
             InitializeComponent();
         }
+
+        private void button_send_petiton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
