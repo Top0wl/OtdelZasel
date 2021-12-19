@@ -33,139 +33,152 @@ namespace OtdelZasel
         {
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.password = new System.Windows.Forms.TextBox();
+            this.login = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.Name = new System.Windows.Forms.TextBox();
+            this.Surname = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.FatherName = new System.Windows.Forms.TextBox();
+            this.signUp = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label2
             // 
-            this.label2.Location = new System.Drawing.Point(109, 153);
+            this.label2.Location = new System.Drawing.Point(127, 177);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(52, 20);
+            this.label2.Size = new System.Drawing.Size(61, 23);
             this.label2.TabIndex = 9;
             this.label2.Text = "Пароль";
             // 
             // label1
             // 
-            this.label1.Location = new System.Drawing.Point(118, 127);
+            this.label1.Location = new System.Drawing.Point(138, 147);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(52, 20);
+            this.label1.Size = new System.Drawing.Size(61, 23);
             this.label1.TabIndex = 8;
             this.label1.Text = "Логин";
             // 
-            // textBox2
+            // password
             // 
-            this.textBox2.Location = new System.Drawing.Point(176, 153);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(193, 20);
-            this.textBox2.TabIndex = 7;
+            this.password.Location = new System.Drawing.Point(205, 177);
+            this.password.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.password.Name = "password";
+            this.password.Size = new System.Drawing.Size(224, 23);
+            this.password.TabIndex = 7;
             // 
-            // textBox1
+            // login
             // 
-            this.textBox1.Location = new System.Drawing.Point(176, 127);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(193, 20);
-            this.textBox1.TabIndex = 6;
+            this.login.Location = new System.Drawing.Point(205, 147);
+            this.login.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.login.Name = "login";
+            this.login.Size = new System.Drawing.Size(224, 23);
+            this.login.TabIndex = 6;
             // 
             // label3
             // 
-            this.label3.Location = new System.Drawing.Point(130, 75);
+            this.label3.Location = new System.Drawing.Point(152, 87);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(31, 20);
+            this.label3.Size = new System.Drawing.Size(36, 23);
             this.label3.TabIndex = 13;
             this.label3.Text = "Имя";
             // 
             // label4
             // 
-            this.label4.Location = new System.Drawing.Point(104, 49);
+            this.label4.Location = new System.Drawing.Point(121, 57);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(57, 20);
+            this.label4.Size = new System.Drawing.Size(66, 23);
             this.label4.TabIndex = 12;
             this.label4.Text = "Фамилия";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
-            // textBox3
+            // Name
             // 
-            this.textBox3.Location = new System.Drawing.Point(176, 75);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(193, 20);
-            this.textBox3.TabIndex = 11;
+            this.Name.Location = new System.Drawing.Point(205, 87);
+            this.Name.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.Name.Name = "Name";
+            this.Name.Size = new System.Drawing.Size(224, 23);
+            this.Name.TabIndex = 11;
             // 
-            // textBox4
+            // Surname
             // 
-            this.textBox4.Location = new System.Drawing.Point(176, 49);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(193, 20);
-            this.textBox4.TabIndex = 10;
+            this.Surname.Location = new System.Drawing.Point(205, 57);
+            this.Surname.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.Surname.Name = "Surname";
+            this.Surname.Size = new System.Drawing.Size(224, 23);
+            this.Surname.TabIndex = 10;
             // 
             // label5
             // 
-            this.label5.Location = new System.Drawing.Point(104, 101);
+            this.label5.Location = new System.Drawing.Point(121, 117);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(57, 20);
+            this.label5.Size = new System.Drawing.Size(66, 23);
             this.label5.TabIndex = 15;
             this.label5.Text = "Отчество";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
-            // textBox5
+            // FatherName
             // 
-            this.textBox5.Location = new System.Drawing.Point(176, 101);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(193, 20);
-            this.textBox5.TabIndex = 14;
+            this.FatherName.Location = new System.Drawing.Point(205, 117);
+            this.FatherName.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.FatherName.Name = "FatherName";
+            this.FatherName.Size = new System.Drawing.Size(224, 23);
+            this.FatherName.TabIndex = 14;
             // 
-            // button1
+            // signUp
             // 
-            this.button1.Location = new System.Drawing.Point(109, 263);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(303, 120);
-            this.button1.TabIndex = 16;
-            this.button1.Text = "Зарегистрироваться";
-            this.button1.UseVisualStyleBackColor = true;
+            this.signUp.Location = new System.Drawing.Point(127, 303);
+            this.signUp.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.signUp.Name = "signUp";
+            this.signUp.Size = new System.Drawing.Size(354, 138);
+            this.signUp.TabIndex = 16;
+            this.signUp.Text = "Зарегистрироваться";
+            this.signUp.UseVisualStyleBackColor = true;
+            this.signUp.Click += new System.EventHandler(this.signUp_Click);
             // 
             // Registration
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(511, 450);
-            this.Controls.Add(this.button1);
+            this.ClientSize = new System.Drawing.Size(596, 519);
+            this.Controls.Add(this.signUp);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.FatherName);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.Name);
+            this.Controls.Add(this.Surname);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.password);
+            this.Controls.Add(this.login);
+            this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "Registration";
             this.Text = "Registration";
+            this.Load += new System.EventHandler(this.Registration_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
+
         }
 
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button signUp;
 
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox FatherName;
 
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox Name;
+        private System.Windows.Forms.TextBox Surname;
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox login;
+        private System.Windows.Forms.TextBox password;
 
         #endregion
     }
