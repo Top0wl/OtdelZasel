@@ -33,12 +33,7 @@ namespace OtdelZasel
             connection = new NpgsqlConnection(connectstr);
         }
 
-        private void Select()
-        {
-           
-        }
-
-        private void button1_Click(object sender, EventArgs e)
+        private void Auth_Button_Click(object sender, EventArgs e)
         {
             try
             {
@@ -80,6 +75,13 @@ namespace OtdelZasel
                 MessageBox.Show("Auth fail. Error: " + ex.Message);
                 throw;
             }
+        }
+
+        private void Registration_Button_Click(object sender, EventArgs e)
+        {
+            Form registrationWindow = new Registration();
+            this.Hide();
+            registrationWindow.Show();
         }
     }
 }

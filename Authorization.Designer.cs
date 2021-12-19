@@ -31,34 +31,35 @@ namespace OtdelZasel
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.Auth_Button = new System.Windows.Forms.Button();
+            this.Registration_Button = new System.Windows.Forms.Button();
             this.login = new System.Windows.Forms.TextBox();
             this.password = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // button1
+            // Auth_Button
             // 
-            this.button1.Location = new System.Drawing.Point(155, 295);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(276, 96);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Войти";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.Auth_Button.Location = new System.Drawing.Point(155, 295);
+            this.Auth_Button.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.Auth_Button.Name = "Auth_Button";
+            this.Auth_Button.Size = new System.Drawing.Size(276, 96);
+            this.Auth_Button.TabIndex = 0;
+            this.Auth_Button.Text = "Войти";
+            this.Auth_Button.UseVisualStyleBackColor = true;
+            this.Auth_Button.Click += new System.EventHandler(this.Auth_Button_Click);
             // 
-            // button2
+            // Registration_Button
             // 
-            this.button2.Location = new System.Drawing.Point(422, 479);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(153, 27);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Зарегистрироваться";
-            this.button2.UseVisualStyleBackColor = true;
+            this.Registration_Button.Location = new System.Drawing.Point(422, 479);
+            this.Registration_Button.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.Registration_Button.Name = "Registration_Button";
+            this.Registration_Button.Size = new System.Drawing.Size(153, 27);
+            this.Registration_Button.TabIndex = 1;
+            this.Registration_Button.Text = "Зарегистрироваться";
+            this.Registration_Button.UseVisualStyleBackColor = true;
+            this.Registration_Button.Click += new System.EventHandler(this.Registration_Button_Click);
             // 
             // login
             // 
@@ -103,8 +104,8 @@ namespace OtdelZasel
             this.Controls.Add(this.label1);
             this.Controls.Add(this.password);
             this.Controls.Add(this.login);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.Registration_Button);
+            this.Controls.Add(this.Auth_Button);
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "Authorization";
             this.Text = "Авторизация";
@@ -116,12 +117,12 @@ namespace OtdelZasel
 
         private System.Windows.Forms.Label label2;
 
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button Registration_Button;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox login;
         private System.Windows.Forms.TextBox password;
 
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button Auth_Button;
 
         #endregion
     }
