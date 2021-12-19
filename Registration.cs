@@ -4,9 +4,9 @@ using System.Windows.Forms;
 
 namespace OtdelZasel
 {
-    public partial class Registration : Form
+    public partial class RegForm : Form
     {
-        public Registration()
+        public RegForm()
         {
             InitializeComponent();
         }
@@ -33,7 +33,7 @@ namespace OtdelZasel
                 var sql = @"select * from createcitizen(:surname, :firstname, :lastname, :login, :password)";
                 var cmd = new NpgsqlCommand(sql, Connection.getInstance().connection);
                 cmd.Parameters.AddWithValue("surname", Surname.Text);
-                cmd.Parameters.AddWithValue("firstname", Name.Text);
+                cmd.Parameters.AddWithValue("firstname", NameTextBox.Text);
                 cmd.Parameters.AddWithValue("lastname", FatherName.Text);
                 cmd.Parameters.AddWithValue("login", login.Text);
                 cmd.Parameters.AddWithValue("password", password.Text);

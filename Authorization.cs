@@ -55,13 +55,15 @@ namespace OtdelZasel
                 {
                     Form workerWindow = new WorkerWindow(id);
                     this.Hide();
-                    workerWindow.Show();
+                    workerWindow.ShowDialog();
+                    this.Close();
                 }
                 else if (role == 3)
                 {
                     Form citizenWindow = new CitizenWindow(id);
                     this.Hide();
-                    citizenWindow.Show();
+                    citizenWindow.ShowDialog();
+                    this.Close();
                 }
                 else
                 {
@@ -79,7 +81,7 @@ namespace OtdelZasel
 
         private void Registration_Button_Click(object sender, EventArgs e)
         {
-            Form registrationWindow = new Registration();
+            Form registrationWindow = new RegForm();
             this.Hide();
             registrationWindow.Show();
         }

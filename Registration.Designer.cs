@@ -2,7 +2,7 @@
 
 namespace OtdelZasel
 {
-    partial class Registration
+    partial class RegForm
     {
         /// <summary>
         /// Required designer variable.
@@ -37,7 +37,7 @@ namespace OtdelZasel
             this.login = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.Name = new System.Windows.Forms.TextBox();
+            this.NameTextBox = new System.Windows.Forms.TextBox();
             this.Surname = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.FatherName = new System.Windows.Forms.TextBox();
@@ -96,13 +96,13 @@ namespace OtdelZasel
             this.label4.TabIndex = 12;
             this.label4.Text = "Фамилия";
             // 
-            // Name
+            // NameTextBox
             // 
-            this.Name.Location = new System.Drawing.Point(205, 87);
-            this.Name.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.Name.Name = "Name";
-            this.Name.Size = new System.Drawing.Size(224, 23);
-            this.Name.TabIndex = 11;
+            this.NameTextBox.Location = new System.Drawing.Point(205, 87);
+            this.NameTextBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.NameTextBox.Name = "NameTextBox";
+            this.NameTextBox.Size = new System.Drawing.Size(224, 23);
+            this.NameTextBox.TabIndex = 11;
             // 
             // Surname
             // 
@@ -140,7 +140,7 @@ namespace OtdelZasel
             this.signUp.UseVisualStyleBackColor = true;
             this.signUp.Click += new System.EventHandler(this.signUp_Click);
             // 
-            // Registration
+            // RegForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -150,7 +150,7 @@ namespace OtdelZasel
             this.Controls.Add(this.FatherName);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.Name);
+            this.Controls.Add(this.NameTextBox);
             this.Controls.Add(this.Surname);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -172,7 +172,7 @@ namespace OtdelZasel
 
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox Name;
+        private System.Windows.Forms.TextBox NameTextBox;
         private System.Windows.Forms.TextBox Surname;
 
         private System.Windows.Forms.Label label1;
