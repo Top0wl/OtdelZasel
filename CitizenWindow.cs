@@ -36,8 +36,10 @@ namespace OtdelZasel
                     cmd.Parameters.AddWithValue("text", richTextBox_Petition.Text);
                     cmd.Parameters.AddWithValue("id_citizen", ID_Citizen);
                 }
-
+                var petition = cmd.ExecuteScalar();
                 Connection.getInstance().connection.Close();
+                MessageBox.Show("Заявление успешно подано");
+                richTextBox_Petition.Text = "";
             }
             catch (Exception ex)
             {
