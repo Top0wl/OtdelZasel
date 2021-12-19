@@ -29,9 +29,9 @@ namespace OtdelZasel
         {
             try
             {
-                connection.Open();
+                Connection.getInstance().connection.Open();
                 var sql = @"select * from createcitizen(:surname, :firstname, :lastname, :login, :password)";
-                var cmd = new NpgsqlCommand(sql, connection);
+                var cmd = new NpgsqlCommand(sql, Connection.getInstance().connection);
                 cmd.Parameters.AddWithValue("surname", Surname.Text);
                 cmd.Parameters.AddWithValue("firstname", Name.Text);
                 cmd.Parameters.AddWithValue("lastname", FatherName.Text);
@@ -39,7 +39,7 @@ namespace OtdelZasel
                 cmd.Parameters.AddWithValue("password", password.Text);
                 var answer = cmd.ExecuteScalar();
                 long idCitizen = (long)answer;
-                connection.Close();
+                Connection.getInstance().connection.Close();
                 Form citizenWindow = new CitizenWindow(idCitizen);
                 this.Hide();
                 citizenWindow.ShowDialog();
