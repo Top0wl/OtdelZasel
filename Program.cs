@@ -17,7 +17,7 @@ namespace OtdelZasel
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new WorkerWindow());
+            Application.Run(new Authorization());
         }
     }
 }
