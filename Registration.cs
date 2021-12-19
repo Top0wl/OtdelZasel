@@ -29,21 +29,21 @@ namespace OtdelZasel
         {
             try
             {
-                connection.Open();
-                var sql = @"select * from createCitizen(:surname, :firstname, :lastname, :login, :password)";
-                var cmd = new NpgsqlCommand(sql, connection);
+                Connection.getInstance().connection.Open();
+                var sql = @"select * from createcitizen(:surname, :firstname, :lastname, :login, :password)";
+                var cmd = new NpgsqlCommand(sql, Connection.getInstance().connection);
                 cmd.Parameters.AddWithValue("surname", Surname.Text);
                 cmd.Parameters.AddWithValue("firstname", Name.Text);
                 cmd.Parameters.AddWithValue("lastname", FatherName.Text);
                 cmd.Parameters.AddWithValue("login", login.Text);
                 cmd.Parameters.AddWithValue("password", password.Text);
-                var answer = cmd.ExecuteReader();
-                answer.Read();
-                long idCitizen = (long)answer.GetValue(0);
-                connection.Close();
+                var answer = cmd.ExecuteScalar();
+                long idCitizen = (long)answer;
+                Connection.getInstance().connection.Close();
                 Form citizenWindow = new CitizenWindow(idCitizen);
                 this.Hide();
-                citizenWindow.Show();
+                citizenWindow.ShowDialog();
+                this.Close();
             }
             catch (Exception ex)
             {

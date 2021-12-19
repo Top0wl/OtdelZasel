@@ -27,7 +27,7 @@ namespace OtdelZasel
 
         public Connection()
         {
-            NpgsqlConnection connection = new NpgsqlConnection(connectstr);
+            connection = new NpgsqlConnection(connectstr);
         }
         public static Connection getInstance()
         {
