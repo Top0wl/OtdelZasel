@@ -12,12 +12,10 @@ namespace OtdelZasel
         {
             InitializeComponent();
         }
-
         private void Authorization_Load(object sender, EventArgs e)
         {
             
         }
-
         private void Auth_Button_Click(object sender, EventArgs e)
         {
             try
@@ -31,10 +29,10 @@ namespace OtdelZasel
 
                 //Параметры
                 {
-                    //cmd.Parameters.AddWithValue("login", login.Text);
-                    //cmd.Parameters.AddWithValue("password", password.Text);
-                    cmd.Parameters.AddWithValue("login", "ivankod");
-                    cmd.Parameters.AddWithValue("password", "qwe");
+                    cmd.Parameters.AddWithValue("login", login.Text);
+                    cmd.Parameters.AddWithValue("password", password.Text);
+                    //cmd.Parameters.AddWithValue("login", "ivankod");
+                    //cmd.Parameters.AddWithValue("password", "qwe");
                 }
                 //Прочитать то что получили от БД
                 //Примеры:
@@ -78,7 +76,6 @@ namespace OtdelZasel
                 throw;
             }
         }
-
         private void Registration_Button_Click(object sender, EventArgs e)
         {
             Form registrationWindow = new RegForm();
