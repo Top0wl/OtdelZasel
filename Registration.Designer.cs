@@ -68,7 +68,7 @@ namespace OtdelZasel
             this.password.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.password.Name = "password";
             this.password.Size = new System.Drawing.Size(224, 23);
-            this.password.TabIndex = 7;
+            this.password.TabIndex = 16;
             // 
             // login
             // 
@@ -76,7 +76,7 @@ namespace OtdelZasel
             this.login.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.login.Name = "login";
             this.login.Size = new System.Drawing.Size(224, 23);
-            this.login.TabIndex = 6;
+            this.login.TabIndex = 15;
             // 
             // label3
             // 
@@ -135,7 +135,7 @@ namespace OtdelZasel
             this.signUp.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.signUp.Name = "signUp";
             this.signUp.Size = new System.Drawing.Size(354, 138);
-            this.signUp.TabIndex = 16;
+            this.signUp.TabIndex = 17;
             this.signUp.Text = "Зарегистрироваться";
             this.signUp.UseVisualStyleBackColor = true;
             this.signUp.Click += new System.EventHandler(this.signUp_Click);
@@ -157,6 +157,7 @@ namespace OtdelZasel
             this.Controls.Add(this.password);
             this.Controls.Add(this.login);
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.Name = "Registration";
             this.Text = "Registration";
             this.Load += new System.EventHandler(this.Registration_Load);
             this.ResumeLayout(false);
