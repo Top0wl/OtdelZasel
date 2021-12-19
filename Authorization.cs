@@ -22,13 +22,27 @@ namespace OtdelZasel
         {
             try
             {
+                //Обязательный коннект
                 Connection.getInstance().connection.Open();
+                //SQL команда
                 var sql = @"select * from loginuser(:login, :password)";
+                //Подключние команды
                 var cmd = new NpgsqlCommand(sql, Connection.getInstance().connection);
-                //cmd.Parameters.AddWithValue("login", login.Text);
-                //cmd.Parameters.AddWithValue("password", password.Text);
-                cmd.Parameters.AddWithValue("login", "ivankod");
-                cmd.Parameters.AddWithValue("password", "qwe");
+
+                //Параметры
+                {
+                    //cmd.Parameters.AddWithValue("login", login.Text);
+                    //cmd.Parameters.AddWithValue("password", password.Text);
+                    cmd.Parameters.AddWithValue("login", "ivankod");
+                    cmd.Parameters.AddWithValue("password", "qwe");
+                }
+                //Прочитать то что получили от БД
+                //Примеры:
+                //Для таблицы:
+                    //var auth = cmd.ExecuteReader();
+                    //auth.Read();
+                    //int role = (int)auth.GetValue(0);
+                    //long id = (long)auth.GetValue(1);
                 var auth = cmd.ExecuteReader();
                 auth.Read();
                 int role = (int)auth.GetValue(0);
