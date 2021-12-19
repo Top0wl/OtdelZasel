@@ -12,7 +12,7 @@ namespace OtdelZasel
 {
     public partial class CitizenWindow : Form
     {
-        public CitizenWindow()
+        public CitizenWindow(long ID)
         {
             InitializeComponent();
         }

@@ -12,11 +12,9 @@ namespace OtdelZasel
 {
     public partial class WorkerWindow : Form
     {
-        public WorkerWindow()
+        public WorkerWindow(long ID)
         {
             InitializeComponent();
-            tabControl1.TabPages[0].Visible = false;
-            
         }
 
     }
