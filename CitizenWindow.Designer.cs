@@ -31,12 +31,12 @@ namespace OtdelZasel
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.label_write_petition = new System.Windows.Forms.Label();
+            this.label_head_petition = new System.Windows.Forms.Label();
+            this.richTextBox_Petition = new System.Windows.Forms.RichTextBox();
             this.button_send_petiton = new System.Windows.Forms.Button();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.label_head_petition = new System.Windows.Forms.Label();
-            this.label_write_petition = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.SuspendLayout();
@@ -56,7 +56,7 @@ namespace OtdelZasel
             // 
             this.tabPage1.Controls.Add(this.label_write_petition);
             this.tabPage1.Controls.Add(this.label_head_petition);
-            this.tabPage1.Controls.Add(this.richTextBox1);
+            this.tabPage1.Controls.Add(this.richTextBox_Petition);
             this.tabPage1.Controls.Add(this.button_send_petiton);
             this.tabPage1.Location = new System.Drawing.Point(4, 24);
             this.tabPage1.Name = "tabPage1";
@@ -65,6 +65,32 @@ namespace OtdelZasel
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Заявление на заселение";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // label_write_petition
+            // 
+            this.label_write_petition.AutoSize = true;
+            this.label_write_petition.Location = new System.Drawing.Point(220, 61);
+            this.label_write_petition.Name = "label_write_petition";
+            this.label_write_petition.Size = new System.Drawing.Size(140, 15);
+            this.label_write_petition.TabIndex = 3;
+            this.label_write_petition.Text = "Введите текст заявления";
+            // 
+            // label_head_petition
+            // 
+            this.label_head_petition.AutoSize = true;
+            this.label_head_petition.Location = new System.Drawing.Point(555, 40);
+            this.label_head_petition.Name = "label_head_petition";
+            this.label_head_petition.Size = new System.Drawing.Size(65, 15);
+            this.label_head_petition.TabIndex = 2;
+            this.label_head_petition.Text = "Заявление";
+            // 
+            // richTextBox_Petition
+            // 
+            this.richTextBox_Petition.Location = new System.Drawing.Point(366, 58);
+            this.richTextBox_Petition.Name = "richTextBox_Petition";
+            this.richTextBox_Petition.Size = new System.Drawing.Size(450, 450);
+            this.richTextBox_Petition.TabIndex = 1;
+            this.richTextBox_Petition.Text = "";
             // 
             // button_send_petiton
             // 
@@ -95,32 +121,6 @@ namespace OtdelZasel
             this.tabPage2.Text = "Оплата";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // richTextBox1
-            // 
-            this.richTextBox1.Location = new System.Drawing.Point(366, 58);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(450, 450);
-            this.richTextBox1.TabIndex = 1;
-            this.richTextBox1.Text = "";
-            // 
-            // label_head_petition
-            // 
-            this.label_head_petition.AutoSize = true;
-            this.label_head_petition.Location = new System.Drawing.Point(555, 40);
-            this.label_head_petition.Name = "label_head_petition";
-            this.label_head_petition.Size = new System.Drawing.Size(65, 15);
-            this.label_head_petition.TabIndex = 2;
-            this.label_head_petition.Text = "Заявление";
-            // 
-            // label_write_petition
-            // 
-            this.label_write_petition.AutoSize = true;
-            this.label_write_petition.Location = new System.Drawing.Point(220, 61);
-            this.label_write_petition.Name = "label_write_petition";
-            this.label_write_petition.Size = new System.Drawing.Size(140, 15);
-            this.label_write_petition.TabIndex = 3;
-            this.label_write_petition.Text = "Введите текст заявления";
-            // 
             // CitizenWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -145,6 +145,6 @@ namespace OtdelZasel
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Label label_write_petition;
         private System.Windows.Forms.Label label_head_petition;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox richTextBox_Petition;
     }
 }
