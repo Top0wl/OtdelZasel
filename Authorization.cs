@@ -12,12 +12,10 @@ namespace OtdelZasel
         {
             InitializeComponent();
         }
-
         private void Authorization_Load(object sender, EventArgs e)
         {
             
         }
-
         private void Auth_Button_Click(object sender, EventArgs e)
         {
             try
@@ -31,10 +29,10 @@ namespace OtdelZasel
 
                 //Параметры
                 {
-                    //cmd.Parameters.AddWithValue("login", login.Text);
-                    //cmd.Parameters.AddWithValue("password", password.Text);
-                    cmd.Parameters.AddWithValue("login", "ivankod");
-                    cmd.Parameters.AddWithValue("password", "qwe");
+                    cmd.Parameters.AddWithValue("login", login.Text);
+                    cmd.Parameters.AddWithValue("password", password.Text);
+                    //cmd.Parameters.AddWithValue("login", "ivankod");
+                    //cmd.Parameters.AddWithValue("password", "qwe");
                 }
                 //Прочитать то что получили от БД
                 //Примеры:
@@ -47,6 +45,7 @@ namespace OtdelZasel
                 auth.Read();
                 int role = (int)auth.GetValue(0);
                 long id = (long)auth.GetValue(1);
+                Connection.getInstance().connection.Close();
                 if (role == 1)
                 {
                    // Application.Run(new WorkerWindow());
@@ -69,7 +68,6 @@ namespace OtdelZasel
                 {
                     MessageBox.Show("Неправильный логин или пароль");
                 }
-                Connection.getInstance().connection.Close();
             }
             catch (Exception ex)
             {
@@ -78,7 +76,6 @@ namespace OtdelZasel
                 throw;
             }
         }
-
         private void Registration_Button_Click(object sender, EventArgs e)
         {
             Form registrationWindow = new RegForm();
