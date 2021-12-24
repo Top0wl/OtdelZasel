@@ -64,6 +64,7 @@
             this.tabControl_Petitions.SelectedIndex = 0;
             this.tabControl_Petitions.Size = new System.Drawing.Size(1162, 643);
             this.tabControl_Petitions.TabIndex = 0;
+            this.tabControl_Petitions.Selecting += new System.Windows.Forms.TabControlCancelEventHandler(this.tabControl_Petitions_Selecting);
             // 
             // tabPage_Petitions
             // 
