@@ -29,10 +29,10 @@ namespace OtdelZasel
 
                 //Параметры
                 {
-                    cmd.Parameters.AddWithValue("login", login.Text);
-                    cmd.Parameters.AddWithValue("password", password.Text);
-                    //cmd.Parameters.AddWithValue("login", "ivankod");
-                    //cmd.Parameters.AddWithValue("password", "qwe");
+                    //cmd.Parameters.AddWithValue("login", login.Text);
+                    //cmd.Parameters.AddWithValue("password", password.Text);
+                    cmd.Parameters.AddWithValue("login", "sotrudnikov");
+                    cmd.Parameters.AddWithValue("password", "1234");
                 }
                 //Прочитать то что получили от БД
                 //Примеры:

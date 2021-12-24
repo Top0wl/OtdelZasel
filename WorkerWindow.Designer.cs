@@ -31,10 +31,12 @@
         {
             this.tabControl_Petitions = new System.Windows.Forms.TabControl();
             this.tabPage_Petitions = new System.Windows.Forms.TabPage();
+            this.richTextBox_textOfSelectedPetition = new System.Windows.Forms.RichTextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.richTextBox_Message = new System.Windows.Forms.RichTextBox();
             this.button_Reject = new System.Windows.Forms.Button();
             this.button_Accept = new System.Windows.Forms.Button();
-            this.qwertty = new System.Windows.Forms.Label();
+            this.title = new System.Windows.Forms.Label();
             this.dataGridView_Petitions = new System.Windows.Forms.DataGridView();
             this.tabPage_CheckIn = new System.Windows.Forms.TabPage();
             this.dataGridView_FreePlaces = new System.Windows.Forms.DataGridView();
@@ -68,10 +70,12 @@
             // 
             // tabPage_Petitions
             // 
+            this.tabPage_Petitions.Controls.Add(this.richTextBox_textOfSelectedPetition);
+            this.tabPage_Petitions.Controls.Add(this.label1);
             this.tabPage_Petitions.Controls.Add(this.richTextBox_Message);
             this.tabPage_Petitions.Controls.Add(this.button_Reject);
             this.tabPage_Petitions.Controls.Add(this.button_Accept);
-            this.tabPage_Petitions.Controls.Add(this.qwertty);
+            this.tabPage_Petitions.Controls.Add(this.title);
             this.tabPage_Petitions.Controls.Add(this.dataGridView_Petitions);
             this.tabPage_Petitions.Location = new System.Drawing.Point(4, 24);
             this.tabPage_Petitions.Name = "tabPage_Petitions";
@@ -80,6 +84,24 @@
             this.tabPage_Petitions.TabIndex = 0;
             this.tabPage_Petitions.Text = "Заявления";
             this.tabPage_Petitions.UseVisualStyleBackColor = true;
+            // 
+            // richTextBox_textOfSelectedPetition
+            // 
+            this.richTextBox_textOfSelectedPetition.Location = new System.Drawing.Point(674, 74);
+            this.richTextBox_textOfSelectedPetition.Name = "richTextBox_textOfSelectedPetition";
+            this.richTextBox_textOfSelectedPetition.ReadOnly = true;
+            this.richTextBox_textOfSelectedPetition.Size = new System.Drawing.Size(451, 96);
+            this.richTextBox_textOfSelectedPetition.TabIndex = 7;
+            this.richTextBox_textOfSelectedPetition.Text = "";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(674, 56);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(36, 15);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Текст";
             // 
             // richTextBox_Message
             // 
@@ -97,6 +119,7 @@
             this.button_Reject.TabIndex = 3;
             this.button_Reject.Text = "Отклонить";
             this.button_Reject.UseVisualStyleBackColor = true;
+            this.button_Reject.Click += new System.EventHandler(this.button_Reject_Click);
             // 
             // button_Accept
             // 
@@ -106,24 +129,32 @@
             this.button_Accept.TabIndex = 2;
             this.button_Accept.Text = "Принять";
             this.button_Accept.UseVisualStyleBackColor = true;
+            this.button_Accept.Click += new System.EventHandler(this.button_Accept_Click);
             // 
-            // qwertty
+            // title
             // 
-            this.qwertty.AutoSize = true;
-            this.qwertty.Location = new System.Drawing.Point(674, 19);
-            this.qwertty.Name = "qwertty";
-            this.qwertty.Size = new System.Drawing.Size(36, 15);
-            this.qwertty.TabIndex = 1;
-            this.qwertty.Text = "Поля";
+            this.title.AutoSize = true;
+            this.title.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.title.Location = new System.Drawing.Point(674, 19);
+            this.title.Name = "title";
+            this.title.Size = new System.Drawing.Size(272, 21);
+            this.title.TabIndex = 1;
+            this.title.Text = "Содержимое выбранного заявления";
             // 
             // dataGridView_Petitions
             // 
+            this.dataGridView_Petitions.AllowUserToAddRows = false;
+            this.dataGridView_Petitions.AllowUserToDeleteRows = false;
             this.dataGridView_Petitions.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView_Petitions.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dataGridView_Petitions.Location = new System.Drawing.Point(3, 3);
+            this.dataGridView_Petitions.MultiSelect = false;
             this.dataGridView_Petitions.Name = "dataGridView_Petitions";
+            this.dataGridView_Petitions.ReadOnly = true;
             this.dataGridView_Petitions.RowTemplate.Height = 25;
             this.dataGridView_Petitions.Size = new System.Drawing.Size(628, 570);
             this.dataGridView_Petitions.TabIndex = 0;
+            this.dataGridView_Petitions.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_Petitions_CellClick);
             // 
             // tabPage_CheckIn
             // 
@@ -235,7 +266,7 @@
         private System.Windows.Forms.TabControl tabControl_Petitions;
         private System.Windows.Forms.TabPage tabPage_Petitions;
         private System.Windows.Forms.TabPage tabPage_CheckIn;
-        private System.Windows.Forms.Label qwertty;
+        private System.Windows.Forms.Label title;
         private System.Windows.Forms.DataGridView dataGridView_Petitions;
         private System.Windows.Forms.RichTextBox richTextBox_Message;
         private System.Windows.Forms.Button button_Reject;
@@ -247,5 +278,7 @@
         private System.Windows.Forms.CheckBox checkBox_CheckOutWithPetitions;
         private System.Windows.Forms.DataGridView dataGridView_CitizensForCheckOut;
         private System.Windows.Forms.Button button_CheckOut;
+        private System.Windows.Forms.RichTextBox richTextBox_textOfSelectedPetition;
+        private System.Windows.Forms.Label label1;
     }
 }
