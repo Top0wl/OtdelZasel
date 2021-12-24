@@ -13,12 +13,16 @@ namespace OtdelZasel
 {
     public partial class WorkerWindow : Form
     {
+
+        long worker_id = 0;
+
         public WorkerWindow(long ID)
         {
+            worker_id = ID;
             InitializeComponent();
         }
 
-        private void WorkerWindow_Load(object sender, EventArgs e)
+        protected void updateUnproccessedPetition()
         {
             try
             {
@@ -30,17 +34,39 @@ namespace OtdelZasel
                 var cmd = new NpgsqlCommand(sql, Connection.getInstance().connection);
                 var dt = new DataTable();
                 dt.Load(cmd.ExecuteReader());
+                
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+                    for(int j = 0; j < dt.Columns.Count; j++)
+                    {
+                        dt.Rows[i][j] = dt.Rows[i][j].ToString().Trim();
+                    }
+                }
+
                 Connection.getInstance().connection.Close();
                 dataGridView_Petitions.DataSource = null;
                 dataGridView_Petitions.DataSource = dt;
+
+                // скрою ID
+                dataGridView_Petitions.Columns[0].Visible = false;
             }
             catch (Exception ex)
             {
                 Connection.getInstance().connection.Close();
-                MessageBox.Show("Auth fail. Error: " + ex.Message);
+                MessageBox.Show("Не удалось загрузить необработанные заявления: " + ex.Message);
                 throw;
             }
         }
 
+
+        private void WorkerWindow_Load(object sender, EventArgs e)
+        {
+            updateUnproccessedPetition();
+        }
+
+        private void tabControl_Petitions_Selecting(object sender, TabControlCancelEventArgs e)
+        {
+            updateUnproccessedPetition();
+        }
     }
 }
