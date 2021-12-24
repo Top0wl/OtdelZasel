@@ -130,5 +130,32 @@ namespace OtdelZasel
                 throw;
             }
         }
+
+        private void button_pay_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                //Обязательный коннект
+                Connection.getInstance().connection.Open();
+                //SQL команда
+                var sql = @"select * from createpaymentnote(:sum::money, :id_citizen)";
+                //Подключние команды
+                var cmd = new NpgsqlCommand(sql, Connection.getInstance().connection);
+                //Параметры
+                {
+                    cmd.Parameters.AddWithValue("sum", (long) numericUpDown_Sum.Value);
+                    cmd.Parameters.AddWithValue("id_citizen", ID_Citizen);
+                } 
+                var pay = cmd.ExecuteScalar();
+                Connection.getInstance().connection.Close();
+                MessageBox.Show("Оплата совершена");
+            }
+            catch (Exception ex)
+            {
+                Connection.getInstance().connection.Close();
+                MessageBox.Show("Pay fail. Error: " + ex.Message);
+                throw;
+            }
+        }
     }
 }
