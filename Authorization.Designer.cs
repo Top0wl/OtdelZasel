@@ -41,10 +41,11 @@ namespace OtdelZasel
             // 
             // Auth_Button
             // 
-            this.Auth_Button.Location = new System.Drawing.Point(155, 295);
+            this.Auth_Button.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.Auth_Button.Location = new System.Drawing.Point(183, 254);
             this.Auth_Button.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Auth_Button.Name = "Auth_Button";
-            this.Auth_Button.Size = new System.Drawing.Size(276, 96);
+            this.Auth_Button.Size = new System.Drawing.Size(224, 62);
             this.Auth_Button.TabIndex = 0;
             this.Auth_Button.Text = "Войти";
             this.Auth_Button.UseVisualStyleBackColor = true;
@@ -52,10 +53,11 @@ namespace OtdelZasel
             // 
             // Registration_Button
             // 
-            this.Registration_Button.Location = new System.Drawing.Point(422, 479);
+            this.Registration_Button.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Registration_Button.Location = new System.Drawing.Point(208, 432);
             this.Registration_Button.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Registration_Button.Name = "Registration_Button";
-            this.Registration_Button.Size = new System.Drawing.Size(153, 27);
+            this.Registration_Button.Size = new System.Drawing.Size(168, 42);
             this.Registration_Button.TabIndex = 1;
             this.Registration_Button.Text = "Зарегистрироваться";
             this.Registration_Button.UseVisualStyleBackColor = true;
@@ -71,15 +73,16 @@ namespace OtdelZasel
             // 
             // password
             // 
-            this.password.Location = new System.Drawing.Point(183, 211);
+            this.password.Location = new System.Drawing.Point(183, 180);
             this.password.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.password.Name = "password";
             this.password.Size = new System.Drawing.Size(224, 23);
             this.password.TabIndex = 3;
+            this.password.UseSystemPasswordChar = true;
             // 
             // label1
             // 
-            this.label1.Location = new System.Drawing.Point(115, 130);
+            this.label1.Location = new System.Drawing.Point(114, 133);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(61, 23);
@@ -88,7 +91,7 @@ namespace OtdelZasel
             // 
             // label2
             // 
-            this.label2.Location = new System.Drawing.Point(115, 211);
+            this.label2.Location = new System.Drawing.Point(114, 183);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(61, 23);

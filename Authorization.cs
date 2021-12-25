@@ -28,12 +28,17 @@ namespace OtdelZasel
                 var cmd = new NpgsqlCommand(sql, Connection.getInstance().connection);
 
                 //Параметры
+
+                if (login.Text.Length > 0 && password.Text.Length > 0)
                 {
                     cmd.Parameters.AddWithValue("login", login.Text);
                     cmd.Parameters.AddWithValue("password", password.Text);
-                    //cmd.Parameters.AddWithValue("login", "ivankod");
-                    //cmd.Parameters.AddWithValue("password", "qwe");
                 }
+                else
+                {
+                    throw new Exception(" Логин или пароль пустой ");
+                }
+
                 //Прочитать то что получили от БД
                 //Примеры:
                 //Для таблицы:
@@ -72,8 +77,7 @@ namespace OtdelZasel
             catch (Exception ex)
             {
                 Connection.getInstance().connection.Close();
-                MessageBox.Show("Auth fail. Error: " + ex.Message);
-                throw;
+                MessageBox.Show("Не удалось авторизироваться. Ошибка: " + ex.Message);
             }
         }
         private void Registration_Button_Click(object sender, EventArgs e)
