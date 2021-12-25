@@ -31,6 +31,7 @@
         {
             this.tabControl_Petitions = new System.Windows.Forms.TabControl();
             this.tabPage_Petitions = new System.Windows.Forms.TabPage();
+            this.label_answer = new System.Windows.Forms.Label();
             this.richTextBox_textOfSelectedPetition = new System.Windows.Forms.RichTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.richTextBox_Message = new System.Windows.Forms.RichTextBox();
@@ -46,6 +47,8 @@
             this.button_CheckOut = new System.Windows.Forms.Button();
             this.checkBox_CheckOutWithPetitions = new System.Windows.Forms.CheckBox();
             this.dataGridView_CitizensForCheckOut = new System.Windows.Forms.DataGridView();
+            this.label_Содержимое = new System.Windows.Forms.Label();
+            this.label_LeavingReason = new System.Windows.Forms.Label();
             this.tabControl_Petitions.SuspendLayout();
             this.tabPage_Petitions.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Petitions)).BeginInit();
@@ -70,6 +73,9 @@
             // 
             // tabPage_Petitions
             // 
+            this.tabPage_Petitions.Controls.Add(this.label_LeavingReason);
+            this.tabPage_Petitions.Controls.Add(this.label_Содержимое);
+            this.tabPage_Petitions.Controls.Add(this.label_answer);
             this.tabPage_Petitions.Controls.Add(this.richTextBox_textOfSelectedPetition);
             this.tabPage_Petitions.Controls.Add(this.label1);
             this.tabPage_Petitions.Controls.Add(this.richTextBox_Message);
@@ -84,6 +90,15 @@
             this.tabPage_Petitions.TabIndex = 0;
             this.tabPage_Petitions.Text = "Заявления";
             this.tabPage_Petitions.UseVisualStyleBackColor = true;
+            // 
+            // label_answer
+            // 
+            this.label_answer.AutoSize = true;
+            this.label_answer.Location = new System.Drawing.Point(674, 415);
+            this.label_answer.Name = "label_answer";
+            this.label_answer.Size = new System.Drawing.Size(113, 15);
+            this.label_answer.TabIndex = 8;
+            this.label_answer.Text = "Ответ на заявление";
             // 
             // richTextBox_textOfSelectedPetition
             // 
@@ -238,6 +253,23 @@
             this.dataGridView_CitizensForCheckOut.Size = new System.Drawing.Size(531, 415);
             this.dataGridView_CitizensForCheckOut.TabIndex = 0;
             // 
+            // label_Содержимое
+            // 
+            this.label_Содержимое.AutoSize = true;
+            this.label_Содержимое.Location = new System.Drawing.Point(674, 196);
+            this.label_Содержимое.Name = "label_Содержимое";
+            this.label_Содержимое.Size = new System.Drawing.Size(79, 15);
+            this.label_Содержимое.TabIndex = 9;
+            this.label_Содержимое.Text = "Содержимое";
+            // 
+            // label_LeavingReason
+            // 
+            this.label_LeavingReason.AutoSize = true;
+            this.label_LeavingReason.Location = new System.Drawing.Point(674, 226);
+            this.label_LeavingReason.Name = "label_LeavingReason";
+            this.label_LeavingReason.Size = new System.Drawing.Size(0, 15);
+            this.label_LeavingReason.TabIndex = 10;
+            // 
             // WorkerWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -280,5 +312,8 @@
         private System.Windows.Forms.Button button_CheckOut;
         private System.Windows.Forms.RichTextBox richTextBox_textOfSelectedPetition;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label_answer;
+        private System.Windows.Forms.Label label_Содержимое;
+        private System.Windows.Forms.Label label_LeavingReason;
     }
 }
