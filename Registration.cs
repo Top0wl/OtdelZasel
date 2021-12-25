@@ -34,8 +34,7 @@ namespace OtdelZasel
             catch (Exception ex)
             {
                 Connection.getInstance().connection.Close();
-                MessageBox.Show("Не удалось зарегистрироваться. Error: " + ex.Message);
-                throw;
+                MessageBox.Show("Не удалось зарегистрироваться. Ошибка: " + ex.Message);
             }
         }
 
