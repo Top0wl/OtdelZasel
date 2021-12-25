@@ -105,7 +105,7 @@ namespace OtdelZasel
                     catch (Exception ex)
                     {
                         Connection.getInstance().connection.Close();
-                        MessageBox.Show("Auth fail. Error: " + ex.Message);
+                        MessageBox.Show("Не удалось подать заявление на выселение");
                         throw;
                     }
                 }
@@ -122,6 +122,7 @@ namespace OtdelZasel
         }
         private void CitizenWindow_Load(object sender, EventArgs e)
         {
+            comboBox_LeavingReason.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             try
             {
                 Connection.getInstance().connection.Open();
