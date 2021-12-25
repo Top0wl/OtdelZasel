@@ -202,11 +202,47 @@ namespace OtdelZasel
 
                 // скрою ID
                 dataGridView_CitizensForCheckOut.Columns[0].Visible = false;
+                dataGridView_CitizensForCheckOut.Columns[1].Visible = false;
             }
             catch (Exception ex)
             {
                 Connection.getInstance().connection.Close();
                 MessageBox.Show("Не удалось загрузить заявления: " + ex.Message);
+            }
+        }
+
+        private long id_citizenForCheckOut;
+        private long id_leavingReasonForCheckOut;
+        private void dataGridView_CitizensForCheckOut_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var i = dataGridView_CitizensForCheckOut.CurrentCell.RowIndex;
+            id_citizenForCheckOut = long.Parse(dataGridView_CitizensForCheckOut.Rows[i].Cells[0].Value.ToString());
+            id_leavingReasonForCheckOut = long.Parse(dataGridView_CitizensForCheckOut.Rows[i].Cells[1].Value.ToString());
+        }
+
+        private void button_CheckOut_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                //Обязательный коннект
+                Connection.getInstance().connection.Open();
+                //SQL команда
+                var sql = @"select * from checkoutcitizen(:id_citizen, :id_leaving_reason)";
+                //Подключние команды
+                var cmd = new NpgsqlCommand(sql, Connection.getInstance().connection);
+
+                cmd.Parameters.AddWithValue("id_citizen", id_citizenForCheckOut);
+                cmd.Parameters.AddWithValue("id_leaving_reason", id_leavingReasonForCheckOut);
+
+                var resultMessage = cmd.ExecuteScalar();
+
+                Connection.getInstance().connection.Close();
+                Update_CheckOut_Petitions();
+            }
+            catch (Exception ex)
+            {
+                Connection.getInstance().connection.Close();
+                MessageBox.Show("Не удалось выселить" + ex.Message);
             }
         }
     }

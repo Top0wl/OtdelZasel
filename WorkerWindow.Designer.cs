@@ -249,6 +249,7 @@
             this.button_CheckOut.TabIndex = 2;
             this.button_CheckOut.Text = "Выселить";
             this.button_CheckOut.UseVisualStyleBackColor = true;
+            this.button_CheckOut.Click += new System.EventHandler(this.button_CheckOut_Click);
             // 
             // checkBox_CheckOutWithPetitions
             // 
@@ -270,6 +271,7 @@
             this.dataGridView_CitizensForCheckOut.RowTemplate.Height = 25;
             this.dataGridView_CitizensForCheckOut.Size = new System.Drawing.Size(531, 415);
             this.dataGridView_CitizensForCheckOut.TabIndex = 0;
+            this.dataGridView_CitizensForCheckOut.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CitizensForCheckOut_CellClick);
             // 
             // WorkerWindow
             // 
