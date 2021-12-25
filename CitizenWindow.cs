@@ -14,10 +14,28 @@ namespace OtdelZasel
     public partial class CitizenWindow : Form
     {
         long ID_Citizen;
+
+        protected void setCitizenName(long id_Citizen)
+        {
+            Connection.getInstance().connection.Open();
+            //SQL команда
+            var sql = "select \"Surname\", \"First_Name\", \"Last_Name\" from \"Citizen\" where \"ID_Cititzen\" = :id_citizen";
+            var cmd = new NpgsqlCommand(sql, Connection.getInstance().connection);
+            cmd.Parameters.AddWithValue("id_citizen", id_Citizen);
+            var result = cmd.ExecuteReader();
+            result.Read();
+            label_CitizenFIO.Text = "";
+            label_CitizenFIO.Text += result.GetValue(0).ToString().Trim() + " ";
+            label_CitizenFIO.Text += result.GetValue(1).ToString().Trim() + " ";
+            label_CitizenFIO.Text += result.GetValue(2).ToString().Trim() + " ";
+            Connection.getInstance().connection.Close();
+        }
+
         public CitizenWindow(long ID)
         {
             InitializeComponent();
             ID_Citizen = ID;
+            setCitizenName(ID_Citizen);
         }
         // Подача заявления на заселение
         private void button_send_petiton_Click(object sender, EventArgs e)
@@ -142,7 +160,7 @@ namespace OtdelZasel
             catch (Exception ex)
             {
                 Connection.getInstance().connection.Close();
-                MessageBox.Show("Auth fail. Error: " + ex.Message);
+                MessageBox.Show("Не удалось выполнить вход: " + ex.Message);
                 throw;
             }
         }
