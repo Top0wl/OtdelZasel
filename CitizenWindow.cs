@@ -74,6 +74,39 @@ namespace OtdelZasel
                 MessageBox.Show("Pay fail. Error: " + ex.Message);
                 throw;
             }
+            Update_Balance();
+        }
+
+        private void Update_Balance()
+        {
+            try
+            {
+                //Обязательный коннект
+                Connection.getInstance().connection.Open();
+                //SQL команда
+                var sql = @"select * from getbalance(:id_citizen)";
+                //Подключние команды
+                var cmd = new NpgsqlCommand(sql, Connection.getInstance().connection);
+                //Параметры
+                {
+                    cmd.Parameters.AddWithValue("id_citizen", ID_Citizen);
+                }
+                var value = cmd.ExecuteScalar();
+                float balance = (float)Convert.ToDouble(value) * -1;
+                label_Balance2.Text = balance.ToString();
+                Connection.getInstance().connection.Close();
+            }
+            catch (Exception ex)
+            {
+                Connection.getInstance().connection.Close();
+                MessageBox.Show("Pay fail. Error: " + ex.Message);
+                throw;
+            }
+        }
+
+        private void tabPage2_Enter(object sender, EventArgs e)
+        {
+            Update_Balance();
         }
     }
 }
