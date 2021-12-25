@@ -42,6 +42,7 @@ namespace OtdelZasel
             this.label_write_PetitionOut = new System.Windows.Forms.Label();
             this.richTextBox_PetitonOut = new System.Windows.Forms.RichTextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.button_pay = new System.Windows.Forms.Button();
             this.numericUpDown_Sum = new System.Windows.Forms.NumericUpDown();
             this.label_Sum = new System.Windows.Forms.Label();
             this.textBox_CVV = new System.Windows.Forms.TextBox();
@@ -50,6 +51,8 @@ namespace OtdelZasel
             this.Label_BankCard = new System.Windows.Forms.Label();
             this.button_pay = new System.Windows.Forms.Button();
             this.label_write_reason = new System.Windows.Forms.Label();
+            this.label_Balance = new System.Windows.Forms.Label();
+            this.label_Balance2 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -179,6 +182,8 @@ namespace OtdelZasel
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.label_Balance2);
+            this.tabPage2.Controls.Add(this.label_Balance);
             this.tabPage2.Controls.Add(this.button_pay);
             this.tabPage2.Controls.Add(this.numericUpDown_Sum);
             this.tabPage2.Controls.Add(this.label_Sum);
@@ -193,6 +198,17 @@ namespace OtdelZasel
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Оплата";
             this.tabPage2.UseVisualStyleBackColor = true;
+            this.tabPage2.Enter += new System.EventHandler(this.tabPage2_Enter);
+            // 
+            // button_pay
+            // 
+            this.button_pay.Location = new System.Drawing.Point(347, 281);
+            this.button_pay.Name = "button_pay";
+            this.button_pay.Size = new System.Drawing.Size(229, 65);
+            this.button_pay.TabIndex = 8;
+            this.button_pay.Text = "Оплатить";
+            this.button_pay.UseVisualStyleBackColor = true;
+            this.button_pay.Click += new System.EventHandler(this.button_pay_Click);
             // 
             // numericUpDown_Sum
             // 
@@ -262,15 +278,23 @@ namespace OtdelZasel
             this.Label_BankCard.TabIndex = 0;
             this.Label_BankCard.Text = "Номер банковской карты:";
             // 
-            // button_pay
+            // label_Balance
             // 
-            this.button_pay.Location = new System.Drawing.Point(347, 281);
-            this.button_pay.Name = "button_pay";
-            this.button_pay.Size = new System.Drawing.Size(229, 65);
-            this.button_pay.TabIndex = 8;
-            this.button_pay.Text = "Оплатить";
-            this.button_pay.UseVisualStyleBackColor = true;
-            this.button_pay.Click += new System.EventHandler(this.button_pay_Click);
+            this.label_Balance.AutoSize = true;
+            this.label_Balance.Location = new System.Drawing.Point(265, 72);
+            this.label_Balance.Name = "label_Balance";
+            this.label_Balance.Size = new System.Drawing.Size(76, 15);
+            this.label_Balance.TabIndex = 9;
+            this.label_Balance.Text = "Ваш баланс:";
+            // 
+            // label_Balance2
+            // 
+            this.label_Balance2.AutoSize = true;
+            this.label_Balance2.Location = new System.Drawing.Point(347, 72);
+            this.label_Balance2.Name = "label_Balance2";
+            this.label_Balance2.Size = new System.Drawing.Size(46, 15);
+            this.label_Balance2.TabIndex = 10;
+            this.label_Balance2.Text = "Баланс";
             // 
             // label_write_reason
             // 
@@ -325,5 +349,7 @@ namespace OtdelZasel
         private System.Windows.Forms.Label label_Sum;
         private System.Windows.Forms.TextBox textBox_CVV;
         private System.Windows.Forms.Button button_pay;
+        private System.Windows.Forms.Label label_Balance2;
+        private System.Windows.Forms.Label label_Balance;
     }
 }
