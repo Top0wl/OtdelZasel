@@ -9,21 +9,40 @@ namespace OtdelZasel
     {
 
         long id_employee = 0;
+
+        protected void setEmployeeName(long id_employee)
+        {
+            Connection.getInstance().connection.Open();
+            //SQL команда
+            var sql = "select \"Surname\", \"First_Name\", \"Last_Name\" from \"Employee\" where \"ID_Employee\" = :id_employee";
+            var cmd = new NpgsqlCommand(sql, Connection.getInstance().connection);
+            cmd.Parameters.AddWithValue("id_employee", id_employee);
+            var result = cmd.ExecuteReader();
+            result.Read();
+            label_EmployeeName.Text = "";
+            label_EmployeeName.Text += result.GetValue(0).ToString().Trim() + " ";
+            label_EmployeeName.Text += result.GetValue(1).ToString().Trim() + " ";
+            label_EmployeeName.Text += result.GetValue(2).ToString().Trim() + " ";
+            Connection.getInstance().connection.Close();
+        }
         
         public WorkerWindow(long ID)
         {
             id_employee = ID;
             InitializeComponent();
+
+            setEmployeeName(id_employee);
             dataGridView_Petitions.AllowUserToAddRows = false;
         }
 
-        #region Необработанные заявления
+        #region Обработка заявлений
         long id_petition = 0;
 
         protected void updateUnproccessedPetition()
         {
             richTextBox_textOfSelectedPetition.Clear();
             label_LeavingReason.Text = "";
+            label_typeOfPetition.Text = "";
             try
             {
                 //Обязательный коннект
@@ -34,15 +53,6 @@ namespace OtdelZasel
                 var cmd = new NpgsqlCommand(sql, Connection.getInstance().connection);
                 var dt = new DataTable();
                 dt.Load(cmd.ExecuteReader());
-
-                // как ни странно  view хорошо отрабатывает trim для фамилии, но не для остальных полей
-                for (int i = 0; i < dt.Rows.Count; i++)
-                {
-                    for(int j = 1; j < dt.Columns.Count; j++)
-                    {
-                        dt.Rows[i][j] = dt.Rows[i][j].ToString().Trim();
-                    }
-                }
                 
                 Connection.getInstance().connection.Close();
                 dataGridView_Petitions.DataSource = null;
@@ -111,10 +121,13 @@ namespace OtdelZasel
                 if (isCheckInPetition)
                 {
                     label_Содержимое.Text = "Приложения";
+                    label_typeOfPetition.Text = "Заявление на заселение";
                 }
                 else
                 {
                     label_Содержимое.Text = "Причина выселения:";
+                    label_typeOfPetition.Text = "Заявление на выселение";
+
                     Connection.getInstance().connection.Close();
                     Connection.getInstance().connection.Open();
                     sql = "select \"Text\" from \"LeavingReason\" where \"ID_LeavingReason\" = :id_leavingReason";
@@ -174,10 +187,10 @@ namespace OtdelZasel
             }
         }
 
-
-
         #endregion
 
+
+        #region Выселение
         private void tabPage_ChechOut_Enter(object sender, EventArgs e)
         {
             Update_CheckOut_Petitions();
@@ -245,5 +258,7 @@ namespace OtdelZasel
                 MessageBox.Show("Не удалось выселить" + ex.Message);
             }
         }
+        #endregion
+
     }
 }
