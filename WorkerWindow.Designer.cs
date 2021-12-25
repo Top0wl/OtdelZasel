@@ -31,6 +31,8 @@
         {
             this.tabControl_Petitions = new System.Windows.Forms.TabControl();
             this.tabPage_Petitions = new System.Windows.Forms.TabPage();
+            this.label_LeavingReason = new System.Windows.Forms.Label();
+            this.label_Содержимое = new System.Windows.Forms.Label();
             this.label_answer = new System.Windows.Forms.Label();
             this.richTextBox_textOfSelectedPetition = new System.Windows.Forms.RichTextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -47,8 +49,6 @@
             this.button_CheckOut = new System.Windows.Forms.Button();
             this.checkBox_CheckOutWithPetitions = new System.Windows.Forms.CheckBox();
             this.dataGridView_CitizensForCheckOut = new System.Windows.Forms.DataGridView();
-            this.label_Содержимое = new System.Windows.Forms.Label();
-            this.label_LeavingReason = new System.Windows.Forms.Label();
             this.tabControl_Petitions.SuspendLayout();
             this.tabPage_Petitions.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Petitions)).BeginInit();
@@ -90,6 +90,23 @@
             this.tabPage_Petitions.TabIndex = 0;
             this.tabPage_Petitions.Text = "Заявления";
             this.tabPage_Petitions.UseVisualStyleBackColor = true;
+            // 
+            // label_LeavingReason
+            // 
+            this.label_LeavingReason.AutoSize = true;
+            this.label_LeavingReason.Location = new System.Drawing.Point(674, 226);
+            this.label_LeavingReason.Name = "label_LeavingReason";
+            this.label_LeavingReason.Size = new System.Drawing.Size(0, 15);
+            this.label_LeavingReason.TabIndex = 10;
+            // 
+            // label_Содержимое
+            // 
+            this.label_Содержимое.AutoSize = true;
+            this.label_Содержимое.Location = new System.Drawing.Point(674, 196);
+            this.label_Содержимое.Name = "label_Содержимое";
+            this.label_Содержимое.Size = new System.Drawing.Size(79, 15);
+            this.label_Содержимое.TabIndex = 9;
+            this.label_Содержимое.Text = "Содержимое";
             // 
             // label_answer
             // 
@@ -222,6 +239,7 @@
             this.tabPage_ChechOut.TabIndex = 2;
             this.tabPage_ChechOut.Text = "Выселение";
             this.tabPage_ChechOut.UseVisualStyleBackColor = true;
+            this.tabPage_ChechOut.Enter += new System.EventHandler(this.tabPage_ChechOut_Enter);
             // 
             // button_CheckOut
             // 
@@ -252,23 +270,6 @@
             this.dataGridView_CitizensForCheckOut.RowTemplate.Height = 25;
             this.dataGridView_CitizensForCheckOut.Size = new System.Drawing.Size(531, 415);
             this.dataGridView_CitizensForCheckOut.TabIndex = 0;
-            // 
-            // label_Содержимое
-            // 
-            this.label_Содержимое.AutoSize = true;
-            this.label_Содержимое.Location = new System.Drawing.Point(674, 196);
-            this.label_Содержимое.Name = "label_Содержимое";
-            this.label_Содержимое.Size = new System.Drawing.Size(79, 15);
-            this.label_Содержимое.TabIndex = 9;
-            this.label_Содержимое.Text = "Содержимое";
-            // 
-            // label_LeavingReason
-            // 
-            this.label_LeavingReason.AutoSize = true;
-            this.label_LeavingReason.Location = new System.Drawing.Point(674, 226);
-            this.label_LeavingReason.Name = "label_LeavingReason";
-            this.label_LeavingReason.Size = new System.Drawing.Size(0, 15);
-            this.label_LeavingReason.TabIndex = 10;
             // 
             // WorkerWindow
             // 

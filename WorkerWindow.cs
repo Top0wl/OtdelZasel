@@ -63,13 +63,13 @@ namespace OtdelZasel
         private void WorkerWindow_Load(object sender, EventArgs e)
         {
             updateUnproccessedPetition();
+
         }
 
         private void tabControl_Petitions_Selecting(object sender, TabControlCancelEventArgs e)
         {
             updateUnproccessedPetition();
         }
-
         int positionOfText = 4;
         private void dataGridView_Petitions_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -77,7 +77,6 @@ namespace OtdelZasel
             id_petition = long.Parse(dataGridView_Petitions.Rows[i].Cells[0].Value.ToString());
             loadTextOfPetitionAndContent(id_petition, dataGridView_Petitions.Rows[i].Cells[positionOfText].Value.ToString());
         }
-
         protected void loadTextOfPetitionAndContent(long petition_id, String text = "")
         {
             richTextBox_textOfSelectedPetition.Text = text;
@@ -135,17 +134,14 @@ namespace OtdelZasel
                 MessageBox.Show("Не удалось открыть заявление" + ex.Message);
             }
         }
-
         private void button_Accept_Click(object sender, EventArgs e)
         {
             proccessPetition(id_petition, true);
         }
-
         private void button_Reject_Click(object sender, EventArgs e)
         {
             proccessPetition(id_petition, false);
         }
-
         protected void proccessPetition(long id_petition, bool is_accepted)
         {
             richTextBox_textOfSelectedPetition.Clear();
@@ -178,6 +174,40 @@ namespace OtdelZasel
             }
         }
 
+
+
         #endregion
+
+        private void tabPage_ChechOut_Enter(object sender, EventArgs e)
+        {
+            Update_CheckOut_Petitions();
+        }
+
+        private void Update_CheckOut_Petitions()
+        {
+            try
+            {
+                //Обязательный коннект
+                Connection.getInstance().connection.Open();
+                //SQL команда
+                var sql = @"select * from UnProcessedCheckOutPetitions;";
+                //Подключние команды
+                var cmd = new NpgsqlCommand(sql, Connection.getInstance().connection);
+                var dt = new DataTable();
+                dt.Load(cmd.ExecuteReader());
+
+                Connection.getInstance().connection.Close();
+                dataGridView_CitizensForCheckOut.DataSource = null;
+                dataGridView_CitizensForCheckOut.DataSource = dt;
+
+                // скрою ID
+                dataGridView_CitizensForCheckOut.Columns[0].Visible = false;
+            }
+            catch (Exception ex)
+            {
+                Connection.getInstance().connection.Close();
+                MessageBox.Show("Не удалось загрузить заявления: " + ex.Message);
+            }
+        }
     }
 }
