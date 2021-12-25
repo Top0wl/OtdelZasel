@@ -73,7 +73,7 @@ namespace OtdelZasel
                     dt.Load(cmd.ExecuteReader());
                     foreach (DataRow row in dt.Rows)
                     {
-                        if (comboBox_LeavingReason.Text == row[dt.Columns[1]].ToString())
+                        if (comboBox_LeavingReason.Text == row[dt.Columns[1]].ToString().Trim())
                             id_leaving_reason = (long)row[dt.Columns[0]];
                     }
                     Connection.getInstance().connection.Close();

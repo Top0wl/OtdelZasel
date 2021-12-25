@@ -354,12 +354,7 @@ namespace OtdelZasel
         private System.Windows.Forms.Button button_pay;
         private System.Windows.Forms.Label label_Balance2;
         private System.Windows.Forms.Label label_Balance;
-        private System.Windows.Forms.Button button_send_PetitonOut;
         private System.Windows.Forms.Label label_CVV;
-        private System.Windows.Forms.Label label_write_PetitionOut;
-        private System.Windows.Forms.RichTextBox richTextBox_PetitonOut;
-        private System.Windows.Forms.ComboBox comboBox_LeavingReason;
-        private System.Windows.Forms.Label label_write_reason;
         private System.Windows.Forms.Label label_reason;
     }
 }
