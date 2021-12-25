@@ -42,10 +42,20 @@ namespace OtdelZasel
             this.label_write_PetitionOut = new System.Windows.Forms.Label();
             this.richTextBox_PetitonOut = new System.Windows.Forms.RichTextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.label_write_reason = new System.Windows.Forms.Label();
+            this.button_pay = new System.Windows.Forms.Button();
+            this.numericUpDown_Sum = new System.Windows.Forms.NumericUpDown();
+            this.label_Sum = new System.Windows.Forms.Label();
+            this.textBox_CVV = new System.Windows.Forms.TextBox();
+            this.textBox_BankCard = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.Label_BankCard = new System.Windows.Forms.Label();
+            this.label_Balance = new System.Windows.Forms.Label();
+            this.label_Balance2 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage3.SuspendLayout();
+            this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_Sum)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -170,6 +180,15 @@ namespace OtdelZasel
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.label_Balance2);
+            this.tabPage2.Controls.Add(this.label_Balance);
+            this.tabPage2.Controls.Add(this.button_pay);
+            this.tabPage2.Controls.Add(this.numericUpDown_Sum);
+            this.tabPage2.Controls.Add(this.label_Sum);
+            this.tabPage2.Controls.Add(this.textBox_CVV);
+            this.tabPage2.Controls.Add(this.textBox_BankCard);
+            this.tabPage2.Controls.Add(this.label1);
+            this.tabPage2.Controls.Add(this.Label_BankCard);
             this.tabPage2.Location = new System.Drawing.Point(4, 24);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -177,6 +196,103 @@ namespace OtdelZasel
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Оплата";
             this.tabPage2.UseVisualStyleBackColor = true;
+            this.tabPage2.Enter += new System.EventHandler(this.tabPage2_Enter);
+            // 
+            // button_pay
+            // 
+            this.button_pay.Location = new System.Drawing.Point(347, 281);
+            this.button_pay.Name = "button_pay";
+            this.button_pay.Size = new System.Drawing.Size(229, 65);
+            this.button_pay.TabIndex = 8;
+            this.button_pay.Text = "Оплатить";
+            this.button_pay.UseVisualStyleBackColor = true;
+            this.button_pay.Click += new System.EventHandler(this.button_pay_Click);
+            // 
+            // numericUpDown_Sum
+            // 
+            this.numericUpDown_Sum.Increment = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
+            this.numericUpDown_Sum.Location = new System.Drawing.Point(347, 224);
+            this.numericUpDown_Sum.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.numericUpDown_Sum.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numericUpDown_Sum.Name = "numericUpDown_Sum";
+            this.numericUpDown_Sum.Size = new System.Drawing.Size(229, 23);
+            this.numericUpDown_Sum.TabIndex = 7;
+            this.numericUpDown_Sum.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // label_Sum
+            // 
+            this.label_Sum.AutoSize = true;
+            this.label_Sum.Location = new System.Drawing.Point(293, 224);
+            this.label_Sum.Name = "label_Sum";
+            this.label_Sum.Size = new System.Drawing.Size(48, 15);
+            this.label_Sum.TabIndex = 5;
+            this.label_Sum.Text = "Сумма:";
+            // 
+            // textBox_CVV
+            // 
+            this.textBox_CVV.Location = new System.Drawing.Point(347, 192);
+            this.textBox_CVV.Name = "textBox_CVV";
+            this.textBox_CVV.Size = new System.Drawing.Size(229, 23);
+            this.textBox_CVV.TabIndex = 3;
+            // 
+            // textBox_BankCard
+            // 
+            this.textBox_BankCard.Location = new System.Drawing.Point(347, 163);
+            this.textBox_BankCard.Name = "textBox_BankCard";
+            this.textBox_BankCard.Size = new System.Drawing.Size(229, 23);
+            this.textBox_BankCard.TabIndex = 2;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(278, 195);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(63, 15);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "CVV/CVC :";
+            // 
+            // Label_BankCard
+            // 
+            this.Label_BankCard.AutoSize = true;
+            this.Label_BankCard.Location = new System.Drawing.Point(189, 166);
+            this.Label_BankCard.Name = "Label_BankCard";
+            this.Label_BankCard.Size = new System.Drawing.Size(152, 15);
+            this.Label_BankCard.TabIndex = 0;
+            this.Label_BankCard.Text = "Номер банковской карты:";
+            // 
+            // label_Balance
+            // 
+            this.label_Balance.AutoSize = true;
+            this.label_Balance.Location = new System.Drawing.Point(265, 72);
+            this.label_Balance.Name = "label_Balance";
+            this.label_Balance.Size = new System.Drawing.Size(76, 15);
+            this.label_Balance.TabIndex = 9;
+            this.label_Balance.Text = "Ваш баланс:";
+            // 
+            // label_Balance2
+            // 
+            this.label_Balance2.AutoSize = true;
+            this.label_Balance2.Location = new System.Drawing.Point(347, 72);
+            this.label_Balance2.Name = "label_Balance2";
+            this.label_Balance2.Size = new System.Drawing.Size(46, 15);
+            this.label_Balance2.TabIndex = 10;
+            this.label_Balance2.Text = "Баланс";
             // 
             // label_write_reason
             // 
@@ -201,6 +317,9 @@ namespace OtdelZasel
             this.tabPage1.PerformLayout();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_Sum)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -215,6 +334,15 @@ namespace OtdelZasel
         private System.Windows.Forms.Label label_write_petition;
         private System.Windows.Forms.Label label_head_petition;
         private System.Windows.Forms.RichTextBox richTextBox_Petition;
+        private System.Windows.Forms.Label Label_BankCard;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox textBox_BankCard;
+        private System.Windows.Forms.NumericUpDown numericUpDown_Sum;
+        private System.Windows.Forms.Label label_Sum;
+        private System.Windows.Forms.TextBox textBox_CVV;
+        private System.Windows.Forms.Button button_pay;
+        private System.Windows.Forms.Label label_Balance2;
+        private System.Windows.Forms.Label label_Balance;
         private System.Windows.Forms.Button button_send_PetitonOut;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label_write_PetitionOut;
