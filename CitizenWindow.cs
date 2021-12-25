@@ -44,8 +44,7 @@ namespace OtdelZasel
             catch (Exception ex)
             {
                 Connection.getInstance().connection.Close();
-                MessageBox.Show("Auth fail. Error: " + ex.Message);
-                throw;
+                MessageBox.Show("Не удалось подать заявление: " + ex.Message);
             }
         }
         // Подача заявления на выселение
@@ -73,8 +72,11 @@ namespace OtdelZasel
                     dt.Load(cmd.ExecuteReader());
                     foreach (DataRow row in dt.Rows)
                     {
-                        if (comboBox_LeavingReason.Text == row[dt.Columns[1]].ToString())
+                        if (comboBox_LeavingReason.Text == row[dt.Columns[1]].ToString().Trim())
+                        {
                             id_leaving_reason = (long)row[dt.Columns[0]];
+                            break;
+                        }
                     }
                     Connection.getInstance().connection.Close();
 
@@ -111,7 +113,6 @@ namespace OtdelZasel
                 {
                     Connection.getInstance().connection.Close();
                     MessageBox.Show("Не выбрана причина выселения");
-                    throw;
                 }
             }
             else
@@ -132,7 +133,7 @@ namespace OtdelZasel
                 dt.Load(cmd.ExecuteReader());
                 foreach (DataRow row in dt.Rows)
                 {
-                    string now_reason = row[dt.Columns[1]].ToString();
+                    string now_reason = row[dt.Columns[1]].ToString().Trim();
                     comboBox_LeavingReason.Items.Add(now_reason);
                 }
                 Connection.getInstance().connection.Close();
