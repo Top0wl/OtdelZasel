@@ -235,11 +235,6 @@ namespace OtdelZasel
             0,
             0,
             0});
-            this.numericUpDown_Sum.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
             this.numericUpDown_Sum.Name = "numericUpDown_Sum";
             this.numericUpDown_Sum.Size = new System.Drawing.Size(229, 23);
             this.numericUpDown_Sum.TabIndex = 7;
