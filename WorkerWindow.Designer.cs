@@ -233,6 +233,7 @@
             this.tabPage_CheckIn.TabIndex = 1;
             this.tabPage_CheckIn.Text = "Заселение";
             this.tabPage_CheckIn.UseVisualStyleBackColor = true;
+            this.tabPage_CheckIn.Enter += new System.EventHandler(this.tabPage_CheckIn_Enter);
             // 
             // label6
             // 
@@ -256,12 +257,16 @@
             // 
             // dataGridView_FreePlaces
             // 
+            this.dataGridView_FreePlaces.AllowUserToAddRows = false;
+            this.dataGridView_FreePlaces.AllowUserToDeleteRows = false;
             this.dataGridView_FreePlaces.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView_FreePlaces.Location = new System.Drawing.Point(622, 38);
             this.dataGridView_FreePlaces.Name = "dataGridView_FreePlaces";
+            this.dataGridView_FreePlaces.ReadOnly = true;
             this.dataGridView_FreePlaces.RowTemplate.Height = 25;
             this.dataGridView_FreePlaces.Size = new System.Drawing.Size(526, 406);
             this.dataGridView_FreePlaces.TabIndex = 2;
+            this.dataGridView_FreePlaces.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_FreePlaces_CellClick);
             // 
             // button_CheckInCitizen
             // 
@@ -271,15 +276,20 @@
             this.button_CheckInCitizen.TabIndex = 1;
             this.button_CheckInCitizen.Text = "Заселить";
             this.button_CheckInCitizen.UseVisualStyleBackColor = true;
+            this.button_CheckInCitizen.Click += new System.EventHandler(this.button_CheckInCitizen_Click);
             // 
             // dataGridView_CitizensForCheckIn
             // 
+            this.dataGridView_CitizensForCheckIn.AllowUserToAddRows = false;
+            this.dataGridView_CitizensForCheckIn.AllowUserToDeleteRows = false;
             this.dataGridView_CitizensForCheckIn.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView_CitizensForCheckIn.Location = new System.Drawing.Point(3, 38);
             this.dataGridView_CitizensForCheckIn.Name = "dataGridView_CitizensForCheckIn";
+            this.dataGridView_CitizensForCheckIn.ReadOnly = true;
             this.dataGridView_CitizensForCheckIn.RowTemplate.Height = 25;
             this.dataGridView_CitizensForCheckIn.Size = new System.Drawing.Size(573, 406);
             this.dataGridView_CitizensForCheckIn.TabIndex = 0;
+            this.dataGridView_CitizensForCheckIn.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CitizensForCheckIn_CellClick);
             // 
             // tabPage_ChechOut
             // 
