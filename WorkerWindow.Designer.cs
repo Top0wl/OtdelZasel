@@ -50,9 +50,11 @@
             this.button_CheckInCitizen = new System.Windows.Forms.Button();
             this.dataGridView_CitizensForCheckIn = new System.Windows.Forms.DataGridView();
             this.tabPage_ChechOut = new System.Windows.Forms.TabPage();
+            this.groupBox_TypesOfWork = new System.Windows.Forms.GroupBox();
+            this.radioButton_WithPetitions = new System.Windows.Forms.RadioButton();
+            this.radioButton_checkOutDebtors = new System.Windows.Forms.RadioButton();
             this.label5 = new System.Windows.Forms.Label();
             this.button_CheckOut = new System.Windows.Forms.Button();
-            this.checkBox_CheckOutWithPetitions = new System.Windows.Forms.CheckBox();
             this.dataGridView_CitizensForCheckOut = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
             this.label_EmployeeName = new System.Windows.Forms.Label();
@@ -63,6 +65,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_FreePlaces)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_CitizensForCheckIn)).BeginInit();
             this.tabPage_ChechOut.SuspendLayout();
+            this.groupBox_TypesOfWork.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_CitizensForCheckOut)).BeginInit();
             this.SuspendLayout();
             // 
@@ -280,9 +283,9 @@
             // 
             // tabPage_ChechOut
             // 
+            this.tabPage_ChechOut.Controls.Add(this.groupBox_TypesOfWork);
             this.tabPage_ChechOut.Controls.Add(this.label5);
             this.tabPage_ChechOut.Controls.Add(this.button_CheckOut);
-            this.tabPage_ChechOut.Controls.Add(this.checkBox_CheckOutWithPetitions);
             this.tabPage_ChechOut.Controls.Add(this.dataGridView_CitizensForCheckOut);
             this.tabPage_ChechOut.Location = new System.Drawing.Point(4, 24);
             this.tabPage_ChechOut.Name = "tabPage_ChechOut";
@@ -291,6 +294,40 @@
             this.tabPage_ChechOut.Text = "Выселение";
             this.tabPage_ChechOut.UseVisualStyleBackColor = true;
             this.tabPage_ChechOut.Enter += new System.EventHandler(this.tabPage_ChechOut_Enter);
+            // 
+            // groupBox_TypesOfWork
+            // 
+            this.groupBox_TypesOfWork.Controls.Add(this.radioButton_WithPetitions);
+            this.groupBox_TypesOfWork.Controls.Add(this.radioButton_checkOutDebtors);
+            this.groupBox_TypesOfWork.Location = new System.Drawing.Point(728, 39);
+            this.groupBox_TypesOfWork.Name = "groupBox_TypesOfWork";
+            this.groupBox_TypesOfWork.Size = new System.Drawing.Size(200, 100);
+            this.groupBox_TypesOfWork.TabIndex = 7;
+            this.groupBox_TypesOfWork.TabStop = false;
+            this.groupBox_TypesOfWork.Text = "Режимы работы";
+            // 
+            // radioButton_WithPetitions
+            // 
+            this.radioButton_WithPetitions.AutoSize = true;
+            this.radioButton_WithPetitions.Checked = true;
+            this.radioButton_WithPetitions.Location = new System.Drawing.Point(16, 33);
+            this.radioButton_WithPetitions.Name = "radioButton_WithPetitions";
+            this.radioButton_WithPetitions.Size = new System.Drawing.Size(162, 19);
+            this.radioButton_WithPetitions.TabIndex = 6;
+            this.radioButton_WithPetitions.TabStop = true;
+            this.radioButton_WithPetitions.Text = "Выселять по заявлениям";
+            this.radioButton_WithPetitions.UseVisualStyleBackColor = true;
+            this.radioButton_WithPetitions.CheckedChanged += new System.EventHandler(this.radioButton_WithPetitions_CheckedChanged);
+            // 
+            // radioButton_checkOutDebtors
+            // 
+            this.radioButton_checkOutDebtors.AutoSize = true;
+            this.radioButton_checkOutDebtors.Location = new System.Drawing.Point(16, 58);
+            this.radioButton_checkOutDebtors.Name = "radioButton_checkOutDebtors";
+            this.radioButton_checkOutDebtors.Size = new System.Drawing.Size(142, 19);
+            this.radioButton_checkOutDebtors.TabIndex = 5;
+            this.radioButton_checkOutDebtors.Text = "Выселять должников";
+            this.radioButton_checkOutDebtors.UseVisualStyleBackColor = true;
             // 
             // label5
             // 
@@ -311,18 +348,6 @@
             this.button_CheckOut.Text = "Выселить";
             this.button_CheckOut.UseVisualStyleBackColor = true;
             this.button_CheckOut.Click += new System.EventHandler(this.button_CheckOut_Click);
-            // 
-            // checkBox_CheckOutWithPetitions
-            // 
-            this.checkBox_CheckOutWithPetitions.AutoSize = true;
-            this.checkBox_CheckOutWithPetitions.Checked = true;
-            this.checkBox_CheckOutWithPetitions.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox_CheckOutWithPetitions.Location = new System.Drawing.Point(25, 466);
-            this.checkBox_CheckOutWithPetitions.Name = "checkBox_CheckOutWithPetitions";
-            this.checkBox_CheckOutWithPetitions.Size = new System.Drawing.Size(158, 19);
-            this.checkBox_CheckOutWithPetitions.TabIndex = 1;
-            this.checkBox_CheckOutWithPetitions.Text = "Выселять по заявлению";
-            this.checkBox_CheckOutWithPetitions.UseVisualStyleBackColor = true;
             // 
             // dataGridView_CitizensForCheckOut
             // 
@@ -377,6 +402,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_CitizensForCheckIn)).EndInit();
             this.tabPage_ChechOut.ResumeLayout(false);
             this.tabPage_ChechOut.PerformLayout();
+            this.groupBox_TypesOfWork.ResumeLayout(false);
+            this.groupBox_TypesOfWork.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_CitizensForCheckOut)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -397,7 +424,6 @@
         private System.Windows.Forms.DataGridView dataGridView_CitizensForCheckIn;
         private System.Windows.Forms.DataGridView dataGridView_FreePlaces;
         private System.Windows.Forms.TabPage tabPage_ChechOut;
-        private System.Windows.Forms.CheckBox checkBox_CheckOutWithPetitions;
         private System.Windows.Forms.DataGridView dataGridView_CitizensForCheckOut;
         private System.Windows.Forms.Button button_CheckOut;
         private System.Windows.Forms.RichTextBox richTextBox_textOfSelectedPetition;
@@ -412,5 +438,8 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.GroupBox groupBox_TypesOfWork;
+        protected System.Windows.Forms.RadioButton radioButton_WithPetitions;
+        protected System.Windows.Forms.RadioButton radioButton_checkOutDebtors;
     }
 }

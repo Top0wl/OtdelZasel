@@ -46,7 +46,7 @@ namespace OtdelZasel
             this.Auth_Button.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Auth_Button.Name = "Auth_Button";
             this.Auth_Button.Size = new System.Drawing.Size(224, 62);
-            this.Auth_Button.TabIndex = 0;
+            this.Auth_Button.TabIndex = 4;
             this.Auth_Button.Text = "Войти";
             this.Auth_Button.UseVisualStyleBackColor = true;
             this.Auth_Button.Click += new System.EventHandler(this.Auth_Button_Click);
@@ -58,7 +58,7 @@ namespace OtdelZasel
             this.Registration_Button.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Registration_Button.Name = "Registration_Button";
             this.Registration_Button.Size = new System.Drawing.Size(168, 42);
-            this.Registration_Button.TabIndex = 1;
+            this.Registration_Button.TabIndex = 5;
             this.Registration_Button.Text = "Зарегистрироваться";
             this.Registration_Button.UseVisualStyleBackColor = true;
             this.Registration_Button.Click += new System.EventHandler(this.Registration_Button_Click);
