@@ -243,5 +243,6 @@ namespace OtdelZasel
             // скрою ID
             dataGridView_livingInfo.Columns[0].Visible = false;
         }
+
     }
 }

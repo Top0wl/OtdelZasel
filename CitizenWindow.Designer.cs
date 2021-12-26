@@ -51,6 +51,8 @@ namespace OtdelZasel
             this.label_CVV = new System.Windows.Forms.Label();
             this.Label_BankCard = new System.Windows.Forms.Label();
             this.tabPage_information = new System.Windows.Forms.TabPage();
+            this.label_Cipher = new System.Windows.Forms.Label();
+            this.label_ActiveKey = new System.Windows.Forms.Label();
             this.dataGridView_livingInfo = new System.Windows.Forms.DataGridView();
             this.label_write_reason = new System.Windows.Forms.Label();
             this.label_CitizenName = new System.Windows.Forms.Label();
@@ -288,6 +290,8 @@ namespace OtdelZasel
             // 
             // tabPage_information
             // 
+            this.tabPage_information.Controls.Add(this.label_Cipher);
+            this.tabPage_information.Controls.Add(this.label_ActiveKey);
             this.tabPage_information.Controls.Add(this.dataGridView_livingInfo);
             this.tabPage_information.Location = new System.Drawing.Point(4, 24);
             this.tabPage_information.Name = "tabPage_information";
@@ -297,6 +301,24 @@ namespace OtdelZasel
             this.tabPage_information.Text = "Сведения о проживании";
             this.tabPage_information.UseVisualStyleBackColor = true;
             this.tabPage_information.Enter += new System.EventHandler(this.tabPage_information_Enter);
+            // 
+            // label_Cipher
+            // 
+            this.label_Cipher.AutoSize = true;
+            this.label_Cipher.Location = new System.Drawing.Point(193, 444);
+            this.label_Cipher.Name = "label_Cipher";
+            this.label_Cipher.Size = new System.Drawing.Size(91, 15);
+            this.label_Cipher.TabIndex = 2;
+            this.label_Cipher.Text = "Ключ не выдан";
+            // 
+            // label_ActiveKey
+            // 
+            this.label_ActiveKey.AutoSize = true;
+            this.label_ActiveKey.Location = new System.Drawing.Point(20, 444);
+            this.label_ActiveKey.Name = "label_ActiveKey";
+            this.label_ActiveKey.Size = new System.Drawing.Size(155, 15);
+            this.label_ActiveKey.TabIndex = 1;
+            this.label_ActiveKey.Text = "Активный ключ для места:";
             // 
             // dataGridView_livingInfo
             // 
@@ -358,6 +380,7 @@ namespace OtdelZasel
             this.tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_Sum)).EndInit();
             this.tabPage_information.ResumeLayout(false);
+            this.tabPage_information.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_livingInfo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -393,5 +416,7 @@ namespace OtdelZasel
         private System.Windows.Forms.Label label_CitizenFIO;
         private System.Windows.Forms.TabPage tabPage_information;
         private System.Windows.Forms.DataGridView dataGridView_livingInfo;
+        private System.Windows.Forms.Label label_Cipher;
+        private System.Windows.Forms.Label label_ActiveKey;
     }
 }
