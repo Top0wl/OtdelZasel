@@ -45,15 +45,20 @@ namespace OtdelZasel
                 //Обязательный коннект
                 Connection.getInstance().connection.Open();
                 //SQL команда
-                var sql = @"select * from createcheckinpetition(:text, :id_citizen)";
-                //Подключние команды
+                var sql = @"select * from isliving(:id_citizen)";
                 var cmd = new NpgsqlCommand(sql, Connection.getInstance().connection);
-
-                //Параметры
+                cmd.Parameters.AddWithValue("id_citizen", ID_Citizen);
+                bool isLiving = (bool) cmd.ExecuteScalar();
+                if(isLiving)
                 {
-                    cmd.Parameters.AddWithValue("text", richTextBox_Petition.Text);
-                    cmd.Parameters.AddWithValue("id_citizen", ID_Citizen);
+                    throw new Exception(" Вы уже заселены ");
                 }
+
+                sql = @"select * from createcheckinpetition(:text, :id_citizen)";
+                cmd = new NpgsqlCommand(sql, Connection.getInstance().connection);
+                cmd.Parameters.AddWithValue("text", richTextBox_Petition.Text);
+                cmd.Parameters.AddWithValue("id_citizen", ID_Citizen);
+                
                 var petition = cmd.ExecuteScalar();
                 Connection.getInstance().connection.Close();
                 MessageBox.Show("Заявление на заселение успешно подано");

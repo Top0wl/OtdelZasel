@@ -33,7 +33,7 @@ namespace OtdelZasel
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.label_write_petition = new System.Windows.Forms.Label();
             this.richTextBox_Petition = new System.Windows.Forms.RichTextBox();
-            this.button_send_petiton = new System.Windows.Forms.Button();
+            this.button_sendCheckInPetiton = new System.Windows.Forms.Button();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.label_reason = new System.Windows.Forms.Label();
             this.comboBox_LeavingReason = new System.Windows.Forms.ComboBox();
@@ -82,7 +82,7 @@ namespace OtdelZasel
             // 
             this.tabPage1.Controls.Add(this.label_write_petition);
             this.tabPage1.Controls.Add(this.richTextBox_Petition);
-            this.tabPage1.Controls.Add(this.button_send_petiton);
+            this.tabPage1.Controls.Add(this.button_sendCheckInPetiton);
             this.tabPage1.Location = new System.Drawing.Point(4, 24);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
@@ -108,15 +108,15 @@ namespace OtdelZasel
             this.richTextBox_Petition.TabIndex = 1;
             this.richTextBox_Petition.Text = "";
             // 
-            // button_send_petiton
+            // button_sendCheckInPetiton
             // 
-            this.button_send_petiton.Location = new System.Drawing.Point(256, 504);
-            this.button_send_petiton.Name = "button_send_petiton";
-            this.button_send_petiton.Size = new System.Drawing.Size(211, 46);
-            this.button_send_petiton.TabIndex = 2;
-            this.button_send_petiton.Text = "Подать заявление";
-            this.button_send_petiton.UseVisualStyleBackColor = true;
-            this.button_send_petiton.Click += new System.EventHandler(this.button_send_petiton_Click);
+            this.button_sendCheckInPetiton.Location = new System.Drawing.Point(256, 504);
+            this.button_sendCheckInPetiton.Name = "button_sendCheckInPetiton";
+            this.button_sendCheckInPetiton.Size = new System.Drawing.Size(211, 46);
+            this.button_sendCheckInPetiton.TabIndex = 2;
+            this.button_sendCheckInPetiton.Text = "Подать заявление";
+            this.button_sendCheckInPetiton.UseVisualStyleBackColor = true;
+            this.button_sendCheckInPetiton.Click += new System.EventHandler(this.button_send_petiton_Click);
             // 
             // tabPage3
             // 
@@ -391,7 +391,7 @@ namespace OtdelZasel
 
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.Button button_send_petiton;
+        private System.Windows.Forms.Button button_sendCheckInPetiton;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Label label_write_petition;
