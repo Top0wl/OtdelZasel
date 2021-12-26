@@ -228,10 +228,19 @@ namespace OtdelZasel
         private void tabPage_information_Enter(object sender, EventArgs e)
         {
             Connection.getInstance().connection.Open();
-            //SQL команда
-            var sql = "select * from livingInformation Where \"ID_Cititzen\" = :id_citizen; ";
+            var sql = "select * from getCipher(:id_citizen);";
             //Подключние команды
             var cmd = new NpgsqlCommand(sql, Connection.getInstance().connection);
+            cmd.Parameters.AddWithValue("id_citizen", ID_Citizen);
+            var cipher = (string) cmd.ExecuteScalar();
+            if (cipher != "")
+            {
+                label_Cipher.Text = cipher;
+            }
+            //SQL команда
+            sql = "select * from livingInformation Where \"ID_Cititzen\" = :id_citizen; ";
+            //Подключние команды
+            cmd = new NpgsqlCommand(sql, Connection.getInstance().connection);
             cmd.Parameters.AddWithValue("id_citizen", ID_Citizen);
             var dt = new DataTable();
             dt.Load(cmd.ExecuteReader());
