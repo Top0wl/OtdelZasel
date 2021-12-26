@@ -50,6 +50,8 @@ namespace OtdelZasel
             this.textBox_BankCard = new System.Windows.Forms.TextBox();
             this.label_CVV = new System.Windows.Forms.Label();
             this.Label_BankCard = new System.Windows.Forms.Label();
+            this.tabPage_information = new System.Windows.Forms.TabPage();
+            this.dataGridView_livingInfo = new System.Windows.Forms.DataGridView();
             this.label_write_reason = new System.Windows.Forms.Label();
             this.label_CitizenName = new System.Windows.Forms.Label();
             this.label_CitizenFIO = new System.Windows.Forms.Label();
@@ -58,6 +60,8 @@ namespace OtdelZasel
             this.tabPage3.SuspendLayout();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_Sum)).BeginInit();
+            this.tabPage_information.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_livingInfo)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -65,6 +69,7 @@ namespace OtdelZasel
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Controls.Add(this.tabPage_information);
             this.tabControl1.Location = new System.Drawing.Point(12, 55);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -286,6 +291,30 @@ namespace OtdelZasel
             this.Label_BankCard.TabIndex = 0;
             this.Label_BankCard.Text = "Номер банковской карты:";
             // 
+            // tabPage_information
+            // 
+            this.tabPage_information.Controls.Add(this.dataGridView_livingInfo);
+            this.tabPage_information.Location = new System.Drawing.Point(4, 24);
+            this.tabPage_information.Name = "tabPage_information";
+            this.tabPage_information.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage_information.Size = new System.Drawing.Size(937, 579);
+            this.tabPage_information.TabIndex = 3;
+            this.tabPage_information.Text = "Сведения о проживании";
+            this.tabPage_information.UseVisualStyleBackColor = true;
+            this.tabPage_information.Enter += new System.EventHandler(this.tabPage_information_Enter);
+            // 
+            // dataGridView_livingInfo
+            // 
+            this.dataGridView_livingInfo.AllowUserToAddRows = false;
+            this.dataGridView_livingInfo.AllowUserToDeleteRows = false;
+            this.dataGridView_livingInfo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView_livingInfo.Location = new System.Drawing.Point(6, 6);
+            this.dataGridView_livingInfo.Name = "dataGridView_livingInfo";
+            this.dataGridView_livingInfo.ReadOnly = true;
+            this.dataGridView_livingInfo.RowTemplate.Height = 25;
+            this.dataGridView_livingInfo.Size = new System.Drawing.Size(925, 417);
+            this.dataGridView_livingInfo.TabIndex = 0;
+            // 
             // label_write_reason
             // 
             this.label_write_reason.Location = new System.Drawing.Point(0, 0);
@@ -333,6 +362,8 @@ namespace OtdelZasel
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_Sum)).EndInit();
+            this.tabPage_information.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_livingInfo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -365,5 +396,7 @@ namespace OtdelZasel
         private System.Windows.Forms.Label label_reason;
         private System.Windows.Forms.Label label_CitizenName;
         private System.Windows.Forms.Label label_CitizenFIO;
+        private System.Windows.Forms.TabPage tabPage_information;
+        private System.Windows.Forms.DataGridView dataGridView_livingInfo;
     }
 }

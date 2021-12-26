@@ -224,5 +224,24 @@ namespace OtdelZasel
         {
             Update_Balance();
         }
+
+        private void tabPage_information_Enter(object sender, EventArgs e)
+        {
+            Connection.getInstance().connection.Open();
+            //SQL команда
+            var sql = "select * from livingInformation Where \"ID_Cititzen\" = :id_citizen; ";
+            //Подключние команды
+            var cmd = new NpgsqlCommand(sql, Connection.getInstance().connection);
+            cmd.Parameters.AddWithValue("id_citizen", ID_Citizen);
+            var dt = new DataTable();
+            dt.Load(cmd.ExecuteReader());
+
+            Connection.getInstance().connection.Close();
+            dataGridView_livingInfo.DataSource = null;
+            dataGridView_livingInfo.DataSource = dt;
+            dataGridView_livingInfo.Columns[8].Width = 180;
+            // скрою ID
+            dataGridView_livingInfo.Columns[0].Visible = false;
+        }
     }
 }
