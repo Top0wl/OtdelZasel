@@ -36,7 +36,7 @@ namespace OtdelZasel
         }
 
         #region Обработка заявлений
-        long id_petition = 0;
+        long id_petition = -1;
 
         protected void updateUnproccessedPetition()
         {
@@ -73,7 +73,6 @@ namespace OtdelZasel
         private void WorkerWindow_Load(object sender, EventArgs e)
         {
             updateUnproccessedPetition();
-
         }
 
         private void tabControl_Petitions_Selecting(object sender, TabControlCancelEventArgs e)
@@ -164,6 +163,10 @@ namespace OtdelZasel
                 {
                     throw new Exception("Введен пустой ответ на заявление! ");
                 }
+                if (id_petition < 0)
+                {
+                    throw new Exception("Не выбрано заявление");
+                }
                 //Обязательный коннект
                 Connection.getInstance().connection.Open();
                 //SQL команда
@@ -183,7 +186,7 @@ namespace OtdelZasel
             catch (Exception ex)
             {
                 Connection.getInstance().connection.Close();
-                MessageBox.Show("Не удалось обработать заявление " + ex.Message);
+                MessageBox.Show("Не удалось обработать заявление: " + ex.Message);
             }
         }
 
@@ -191,52 +194,105 @@ namespace OtdelZasel
 
 
         #region Выселение
+
+        long checkOutReasonWithDept = 2;
         private void tabPage_ChechOut_Enter(object sender, EventArgs e)
         {
             Update_CheckOut_Petitions();
+
+            Connection.getInstance().connection.Open();
+            var sql = "select \"ID_LeavingReason\" from \"LeavingReason\" where (lower(\"Text\") LIKE '%неоплат%')";
+            var cmd = new NpgsqlCommand(sql, Connection.getInstance().connection);
+            checkOutReasonWithDept = (long) cmd.ExecuteScalar();
+            Connection.getInstance().connection.Close();
         }
 
+        bool checkOutWithPetitions = true;
+        private void radioButton_WithPetitions_CheckedChanged(object sender, EventArgs e)
+        {
+            checkOutWithPetitions = radioButton_WithPetitions.Checked;
+            Update_CheckOut_Petitions();
+        }
+        
         private void Update_CheckOut_Petitions()
         {
-            try
+
+            if(checkOutWithPetitions)
             {
-                //Обязательный коннект
-                Connection.getInstance().connection.Open();
-                //SQL команда
-                var sql = @"select * from UnProcessedCheckOutPetitions;";
-                //Подключние команды
-                var cmd = new NpgsqlCommand(sql, Connection.getInstance().connection);
-                var dt = new DataTable();
-                dt.Load(cmd.ExecuteReader());
+                try
+                {
+                    //Обязательный коннект
+                    Connection.getInstance().connection.Open();
+                    //SQL команда
+                    var sql = @"select * from UnProcessedCheckOutPetitions;";
+                    //Подключние команды
+                    var cmd = new NpgsqlCommand(sql, Connection.getInstance().connection);
+                    var dt = new DataTable();
+                    dt.Load(cmd.ExecuteReader());
 
-                Connection.getInstance().connection.Close();
-                dataGridView_CitizensForCheckOut.DataSource = null;
-                dataGridView_CitizensForCheckOut.DataSource = dt;
+                    Connection.getInstance().connection.Close();
+                    dataGridView_CitizensForCheckOut.DataSource = null;
+                    dataGridView_CitizensForCheckOut.DataSource = dt;
 
-                // скрою ID
-                dataGridView_CitizensForCheckOut.Columns[0].Visible = false;
-                dataGridView_CitizensForCheckOut.Columns[1].Visible = false;
+                    // скрою ID
+                    dataGridView_CitizensForCheckOut.Columns[0].Visible = false;
+                    dataGridView_CitizensForCheckOut.Columns[1].Visible = false;
+                }
+                catch (Exception ex)
+                {
+                    Connection.getInstance().connection.Close();
+                    MessageBox.Show("Не удалось загрузить заявления: " + ex.Message);
+                }
             }
-            catch (Exception ex)
+            else
             {
-                Connection.getInstance().connection.Close();
-                MessageBox.Show("Не удалось загрузить заявления: " + ex.Message);
+                try
+                {
+                    //Обязательный коннект
+                    Connection.getInstance().connection.Open();
+                    //SQL команда
+                    var sql = @"select * from debtors;";
+                    //Подключние команды
+                    var cmd = new NpgsqlCommand(sql, Connection.getInstance().connection);
+                    var dt = new DataTable();
+                    dt.Load(cmd.ExecuteReader());
+
+                    Connection.getInstance().connection.Close();
+                    dataGridView_CitizensForCheckOut.DataSource = null;
+                    dataGridView_CitizensForCheckOut.DataSource = dt;
+
+                    // скрою ID
+                    dataGridView_CitizensForCheckOut.Columns[0].Visible = false;
+                    dataGridView_CitizensForCheckOut.Columns[1].Visible = false;
+                }
+                catch (Exception ex)
+                {
+                    Connection.getInstance().connection.Close();
+                    MessageBox.Show("Не удалось загрузить список должников: " + ex.Message);
+                }
             }
         }
 
-        private long id_citizenForCheckOut;
-        private long id_leavingReasonForCheckOut;
+        private long id_citizenForCheckOut = -1;
+        private long id_leavingReasonForCheckOut = 2;
         private void dataGridView_CitizensForCheckOut_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             var i = dataGridView_CitizensForCheckOut.CurrentCell.RowIndex;
             id_citizenForCheckOut = long.Parse(dataGridView_CitizensForCheckOut.Rows[i].Cells[0].Value.ToString());
-            id_leavingReasonForCheckOut = long.Parse(dataGridView_CitizensForCheckOut.Rows[i].Cells[1].Value.ToString());
+            if (checkOutWithPetitions)
+                id_leavingReasonForCheckOut = long.Parse(dataGridView_CitizensForCheckOut.Rows[i].Cells[1].Value.ToString());
+            else
+                id_leavingReasonForCheckOut = checkOutReasonWithDept;
         }
 
         private void button_CheckOut_Click(object sender, EventArgs e)
         {
             try
             {
+                if(id_citizenForCheckOut < 0)
+                {
+                    throw new Exception("Выберите гражданина для выселения");
+                }
                 //Обязательный коннект
                 Connection.getInstance().connection.Open();
                 //SQL команда
@@ -255,9 +311,120 @@ namespace OtdelZasel
             catch (Exception ex)
             {
                 Connection.getInstance().connection.Close();
-                MessageBox.Show("Не удалось выселить" + ex.Message);
+                MessageBox.Show("Не удалось выселить: " + ex.Message);
             }
         }
+
+        #endregion
+
+
+        #region Заселение
+
+        private void tabPage_CheckIn_Enter(object sender, EventArgs e)
+        {
+            Update_CheckInCitizen();
+
+            Connection.getInstance().connection.Open();
+            var sql = "select \"ID_LeavingReason\" from \"LeavingReason\" where (lower(\"Text\") LIKE '%неоплат%')";
+            var cmd = new NpgsqlCommand(sql, Connection.getInstance().connection);
+            checkOutReasonWithDept = (long)cmd.ExecuteScalar();
+            Connection.getInstance().connection.Close();
+        }
+
+        long id_freePlace = -1;
+        long id_citizenForCheckIn = -1;
+
+        private void dataGridView_FreePlaces_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var i = dataGridView_FreePlaces.CurrentCell.RowIndex;
+            id_freePlace = long.Parse(dataGridView_FreePlaces.Rows[i].Cells[0].Value.ToString());
+        }
+
+
+        private void dataGridView_CitizensForCheckIn_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var i = dataGridView_CitizensForCheckIn.CurrentCell.RowIndex;
+            id_citizenForCheckIn = long.Parse(dataGridView_CitizensForCheckIn.Rows[i].Cells[0].Value.ToString());
+        }
+        private void Update_CheckInCitizen()
+        {
+            try
+            {
+                Connection.getInstance().connection.Open();
+                var sql = "select * from \"FreePlaces\";";
+                //Подключние команды
+                var cmd = new NpgsqlCommand(sql, Connection.getInstance().connection);
+                var dt = new DataTable();
+                dt.Load(cmd.ExecuteReader());
+                Connection.getInstance().connection.Close();
+                dataGridView_FreePlaces.DataSource = null;
+                dataGridView_FreePlaces.DataSource = dt;
+                // скрою ID
+                dataGridView_FreePlaces.Columns[0].Visible = false;
+                dataGridView_FreePlaces.Columns[3].Width = 80;
+                dataGridView_FreePlaces.Columns[4].Width = 80;
+                dataGridView_FreePlaces.Columns[5].Width = 80;
+            }
+            catch (Exception ex)
+            {
+                Connection.getInstance().connection.Close();
+                MessageBox.Show("Не удалось загрузить свободные места: " + ex.Message);
+            }
+
+            
+            try
+            {
+                Connection.getInstance().connection.Open();
+                var sql = @"select * from unprocessedcheckinpetitions;";
+                //Подключние команды
+                var cmd = new NpgsqlCommand(sql, Connection.getInstance().connection);
+                var dt = new DataTable();
+                dt.Load(cmd.ExecuteReader());
+                Connection.getInstance().connection.Close();
+                dataGridView_CitizensForCheckIn.DataSource = null;
+                dataGridView_CitizensForCheckIn.DataSource = dt;
+                // скрою ID
+                dataGridView_CitizensForCheckIn.Columns[0].Visible = false;
+            }
+            catch (Exception ex)
+            {
+                Connection.getInstance().connection.Close();
+                MessageBox.Show("Не удалось отобразить граждан для заселения: " + ex.Message);
+            }
+        }
+
+        private void button_CheckInCitizen_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (id_citizenForCheckIn < 0)
+                {
+                    throw new Exception("Выберите гражданина для заселение");
+                }
+                if (id_freePlace < 0)
+                {
+                    throw new Exception("Выберите свободное место для заселение");
+                }
+                //Обязательный коннект
+                Connection.getInstance().connection.Open();
+                //SQL команда
+                var sql = @"select * from checkincitizen(:id_employee, :id_citizen, :id_place)";
+                //Подключние команды
+                var cmd = new NpgsqlCommand(sql, Connection.getInstance().connection);
+                cmd.Parameters.AddWithValue("id_employee", id_employee);
+                cmd.Parameters.AddWithValue("id_citizen", id_citizenForCheckIn);
+                cmd.Parameters.AddWithValue("id_place", id_freePlace);
+                var resultMessage = cmd.ExecuteScalar();
+                Connection.getInstance().connection.Close();
+                Update_CheckInCitizen();
+            }
+            catch (Exception ex)
+            {
+                Connection.getInstance().connection.Close();
+                MessageBox.Show("Не удалось отобразить граждан для заселения: " + ex.Message);
+            }
+        }
+
         #endregion
 
     }
