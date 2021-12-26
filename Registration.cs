@@ -15,6 +15,15 @@ namespace OtdelZasel
         {
             try
             {
+                if (Surname.Text.Length < 2)
+                    throw new Exception("Фамилия слишком короткая");
+                if (NameTextBox.Text.Length < 2)
+                    throw new Exception("Имя слишком короткое");
+                if (login.Text.Length < 2)
+                    throw new Exception("Логин должен содержать не менее 2 символов");
+                if (password.Text.Length < 1)
+                    throw new Exception("Пароль не может быть пустым");
+
                 Connection.getInstance().connection.Open();
                 var sql = @"select * from createcitizen(:surname, :firstname, :lastname, :login, :password)";
                 var cmd = new NpgsqlCommand(sql, Connection.getInstance().connection);

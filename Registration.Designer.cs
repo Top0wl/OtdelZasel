@@ -46,16 +46,16 @@ namespace OtdelZasel
             // 
             // label2
             // 
-            this.label2.Location = new System.Drawing.Point(127, 177);
+            this.label2.Location = new System.Drawing.Point(58, 178);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(61, 23);
+            this.label2.Size = new System.Drawing.Size(51, 23);
             this.label2.TabIndex = 9;
             this.label2.Text = "Пароль";
             // 
             // label1
             // 
-            this.label1.Location = new System.Drawing.Point(138, 147);
+            this.label1.Location = new System.Drawing.Point(69, 148);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(61, 23);
@@ -64,7 +64,7 @@ namespace OtdelZasel
             // 
             // password
             // 
-            this.password.Location = new System.Drawing.Point(205, 177);
+            this.password.Location = new System.Drawing.Point(136, 178);
             this.password.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.password.Name = "password";
             this.password.Size = new System.Drawing.Size(224, 23);
@@ -72,7 +72,7 @@ namespace OtdelZasel
             // 
             // login
             // 
-            this.login.Location = new System.Drawing.Point(205, 147);
+            this.login.Location = new System.Drawing.Point(136, 148);
             this.login.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.login.Name = "login";
             this.login.Size = new System.Drawing.Size(224, 23);
@@ -80,7 +80,7 @@ namespace OtdelZasel
             // 
             // label3
             // 
-            this.label3.Location = new System.Drawing.Point(152, 87);
+            this.label3.Location = new System.Drawing.Point(73, 88);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(36, 23);
@@ -89,7 +89,7 @@ namespace OtdelZasel
             // 
             // label4
             // 
-            this.label4.Location = new System.Drawing.Point(121, 57);
+            this.label4.Location = new System.Drawing.Point(52, 58);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(66, 23);
@@ -98,7 +98,7 @@ namespace OtdelZasel
             // 
             // NameTextBox
             // 
-            this.NameTextBox.Location = new System.Drawing.Point(205, 87);
+            this.NameTextBox.Location = new System.Drawing.Point(136, 88);
             this.NameTextBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.NameTextBox.Name = "NameTextBox";
             this.NameTextBox.Size = new System.Drawing.Size(224, 23);
@@ -106,7 +106,7 @@ namespace OtdelZasel
             // 
             // Surname
             // 
-            this.Surname.Location = new System.Drawing.Point(205, 57);
+            this.Surname.Location = new System.Drawing.Point(136, 58);
             this.Surname.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Surname.Name = "Surname";
             this.Surname.Size = new System.Drawing.Size(224, 23);
@@ -114,7 +114,7 @@ namespace OtdelZasel
             // 
             // label5
             // 
-            this.label5.Location = new System.Drawing.Point(121, 117);
+            this.label5.Location = new System.Drawing.Point(52, 118);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(66, 23);
@@ -123,7 +123,7 @@ namespace OtdelZasel
             // 
             // FatherName
             // 
-            this.FatherName.Location = new System.Drawing.Point(205, 117);
+            this.FatherName.Location = new System.Drawing.Point(136, 118);
             this.FatherName.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.FatherName.Name = "FatherName";
             this.FatherName.Size = new System.Drawing.Size(224, 23);
@@ -131,10 +131,13 @@ namespace OtdelZasel
             // 
             // signUp
             // 
-            this.signUp.Location = new System.Drawing.Point(127, 303);
+            this.signUp.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Blue;
+            this.signUp.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.signUp.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.signUp.Location = new System.Drawing.Point(136, 243);
             this.signUp.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.signUp.Name = "signUp";
-            this.signUp.Size = new System.Drawing.Size(354, 138);
+            this.signUp.Size = new System.Drawing.Size(224, 62);
             this.signUp.TabIndex = 17;
             this.signUp.Text = "Зарегистрироваться";
             this.signUp.UseVisualStyleBackColor = true;
@@ -144,7 +147,7 @@ namespace OtdelZasel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(596, 519);
+            this.ClientSize = new System.Drawing.Size(461, 360);
             this.Controls.Add(this.signUp);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.FatherName);
@@ -157,8 +160,8 @@ namespace OtdelZasel
             this.Controls.Add(this.password);
             this.Controls.Add(this.login);
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.Name = "Registration";
-            this.Text = "Registration";
+            this.Name = "RegForm";
+            this.Text = "Регистрация нового гражданина";
             this.ResumeLayout(false);
             this.PerformLayout();
 

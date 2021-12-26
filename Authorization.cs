@@ -62,18 +62,18 @@ namespace OtdelZasel
                     Form workerWindow = new WorkerWindow(id);
                     this.Hide();
                     workerWindow.ShowDialog();
-                    this.Close();
+                    this.Show();
                 }
                 else if (role == 3)
                 {
                     Form citizenWindow = new CitizenWindow(id);
                     this.Hide();
                     citizenWindow.ShowDialog();
-                    this.Close();
+                    this.Show();
                 }
                 else
                 {
-                    MessageBox.Show("Неправильный логин или пароль");
+                    MessageBox.Show("Введене неправильный логин или пароль");
                 }
             }
             catch (Exception ex)
@@ -86,7 +86,8 @@ namespace OtdelZasel
         {
             Form registrationWindow = new RegForm();
             this.Hide();
-            registrationWindow.Show();
+            registrationWindow.ShowDialog();
+            this.Show();
         }
     }
 }
