@@ -33,7 +33,7 @@ namespace OtdelZasel
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.label_write_petition = new System.Windows.Forms.Label();
             this.richTextBox_Petition = new System.Windows.Forms.RichTextBox();
-            this.button_send_petiton = new System.Windows.Forms.Button();
+            this.button_sendCheckInPetiton = new System.Windows.Forms.Button();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.label_reason = new System.Windows.Forms.Label();
             this.comboBox_LeavingReason = new System.Windows.Forms.ComboBox();
@@ -57,6 +57,11 @@ namespace OtdelZasel
             this.label_write_reason = new System.Windows.Forms.Label();
             this.label_CitizenName = new System.Windows.Forms.Label();
             this.label_CitizenFIO = new System.Windows.Forms.Label();
+            this.tabPage_PetitionsRMassages = new System.Windows.Forms.TabPage();
+            this.dataGridView_PetitionRMessages = new System.Windows.Forms.DataGridView();
+            this.label_answerOfPetitions = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label_ОплатаЗаПроживание = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage3.SuspendLayout();
@@ -64,6 +69,8 @@ namespace OtdelZasel
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_Sum)).BeginInit();
             this.tabPage_information.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_livingInfo)).BeginInit();
+            this.tabPage_PetitionsRMassages.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_PetitionRMessages)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -72,6 +79,7 @@ namespace OtdelZasel
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage_information);
+            this.tabControl1.Controls.Add(this.tabPage_PetitionsRMassages);
             this.tabControl1.Location = new System.Drawing.Point(12, 55);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -82,7 +90,7 @@ namespace OtdelZasel
             // 
             this.tabPage1.Controls.Add(this.label_write_petition);
             this.tabPage1.Controls.Add(this.richTextBox_Petition);
-            this.tabPage1.Controls.Add(this.button_send_petiton);
+            this.tabPage1.Controls.Add(this.button_sendCheckInPetiton);
             this.tabPage1.Location = new System.Drawing.Point(4, 24);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
@@ -108,15 +116,16 @@ namespace OtdelZasel
             this.richTextBox_Petition.TabIndex = 1;
             this.richTextBox_Petition.Text = "";
             // 
-            // button_send_petiton
+            // button_sendCheckInPetiton
             // 
-            this.button_send_petiton.Location = new System.Drawing.Point(256, 504);
-            this.button_send_petiton.Name = "button_send_petiton";
-            this.button_send_petiton.Size = new System.Drawing.Size(211, 46);
-            this.button_send_petiton.TabIndex = 2;
-            this.button_send_petiton.Text = "Подать заявление";
-            this.button_send_petiton.UseVisualStyleBackColor = true;
-            this.button_send_petiton.Click += new System.EventHandler(this.button_send_petiton_Click);
+            this.button_sendCheckInPetiton.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.button_sendCheckInPetiton.Location = new System.Drawing.Point(615, 437);
+            this.button_sendCheckInPetiton.Name = "button_sendCheckInPetiton";
+            this.button_sendCheckInPetiton.Size = new System.Drawing.Size(211, 46);
+            this.button_sendCheckInPetiton.TabIndex = 2;
+            this.button_sendCheckInPetiton.Text = "Подать заявление";
+            this.button_sendCheckInPetiton.UseVisualStyleBackColor = true;
+            this.button_sendCheckInPetiton.Click += new System.EventHandler(this.button_send_petiton_Click);
             // 
             // tabPage3
             // 
@@ -151,7 +160,8 @@ namespace OtdelZasel
             // 
             // button_send_PetitonOut
             // 
-            this.button_send_PetitonOut.Location = new System.Drawing.Point(264, 489);
+            this.button_send_PetitonOut.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.button_send_PetitonOut.Location = new System.Drawing.Point(614, 437);
             this.button_send_PetitonOut.Name = "button_send_PetitonOut";
             this.button_send_PetitonOut.Size = new System.Drawing.Size(211, 46);
             this.button_send_PetitonOut.TabIndex = 5;
@@ -178,6 +188,7 @@ namespace OtdelZasel
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.label_ОплатаЗаПроживание);
             this.tabPage2.Controls.Add(this.label_Balance2);
             this.tabPage2.Controls.Add(this.label_Balance);
             this.tabPage2.Controls.Add(this.button_pay);
@@ -192,31 +203,35 @@ namespace OtdelZasel
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage2.Size = new System.Drawing.Size(937, 579);
             this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Оплата";
+            this.tabPage2.Text = "Оплата проживания";
             this.tabPage2.UseVisualStyleBackColor = true;
             this.tabPage2.Enter += new System.EventHandler(this.tabPage2_Enter);
             // 
             // label_Balance2
             // 
             this.label_Balance2.AutoSize = true;
-            this.label_Balance2.Location = new System.Drawing.Point(184, 19);
+            this.label_Balance2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point);
+            this.label_Balance2.Location = new System.Drawing.Point(778, 31);
             this.label_Balance2.Name = "label_Balance2";
-            this.label_Balance2.Size = new System.Drawing.Size(46, 15);
+            this.label_Balance2.Size = new System.Drawing.Size(58, 20);
             this.label_Balance2.TabIndex = 10;
             this.label_Balance2.Text = "Баланс";
             // 
             // label_Balance
             // 
             this.label_Balance.AutoSize = true;
-            this.label_Balance.Location = new System.Drawing.Point(102, 19);
+            this.label_Balance.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label_Balance.Location = new System.Drawing.Point(593, 31);
             this.label_Balance.Name = "label_Balance";
-            this.label_Balance.Size = new System.Drawing.Size(76, 15);
+            this.label_Balance.Size = new System.Drawing.Size(166, 20);
             this.label_Balance.TabIndex = 9;
-            this.label_Balance.Text = "Ваш баланс:";
+            this.label_Balance.Text = "Ваш баланс (рублей):";
             // 
             // button_pay
             // 
-            this.button_pay.Location = new System.Drawing.Point(184, 228);
+            this.button_pay.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.button_pay.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.button_pay.Location = new System.Drawing.Point(197, 197);
             this.button_pay.Name = "button_pay";
             this.button_pay.Size = new System.Drawing.Size(229, 65);
             this.button_pay.TabIndex = 8;
@@ -231,7 +246,7 @@ namespace OtdelZasel
             0,
             0,
             0});
-            this.numericUpDown_Sum.Location = new System.Drawing.Point(184, 171);
+            this.numericUpDown_Sum.Location = new System.Drawing.Point(197, 140);
             this.numericUpDown_Sum.Maximum = new decimal(new int[] {
             10000,
             0,
@@ -249,7 +264,7 @@ namespace OtdelZasel
             // label_Sum
             // 
             this.label_Sum.AutoSize = true;
-            this.label_Sum.Location = new System.Drawing.Point(130, 171);
+            this.label_Sum.Location = new System.Drawing.Point(143, 140);
             this.label_Sum.Name = "label_Sum";
             this.label_Sum.Size = new System.Drawing.Size(48, 15);
             this.label_Sum.TabIndex = 5;
@@ -257,7 +272,7 @@ namespace OtdelZasel
             // 
             // textBox_CVV
             // 
-            this.textBox_CVV.Location = new System.Drawing.Point(184, 139);
+            this.textBox_CVV.Location = new System.Drawing.Point(197, 108);
             this.textBox_CVV.Name = "textBox_CVV";
             this.textBox_CVV.Size = new System.Drawing.Size(229, 23);
             this.textBox_CVV.TabIndex = 3;
@@ -265,7 +280,7 @@ namespace OtdelZasel
             // 
             // textBox_BankCard
             // 
-            this.textBox_BankCard.Location = new System.Drawing.Point(184, 110);
+            this.textBox_BankCard.Location = new System.Drawing.Point(197, 79);
             this.textBox_BankCard.Name = "textBox_BankCard";
             this.textBox_BankCard.Size = new System.Drawing.Size(229, 23);
             this.textBox_BankCard.TabIndex = 2;
@@ -273,7 +288,7 @@ namespace OtdelZasel
             // label_CVV
             // 
             this.label_CVV.AutoSize = true;
-            this.label_CVV.Location = new System.Drawing.Point(115, 142);
+            this.label_CVV.Location = new System.Drawing.Point(128, 111);
             this.label_CVV.Name = "label_CVV";
             this.label_CVV.Size = new System.Drawing.Size(63, 15);
             this.label_CVV.TabIndex = 1;
@@ -282,7 +297,7 @@ namespace OtdelZasel
             // Label_BankCard
             // 
             this.Label_BankCard.AutoSize = true;
-            this.Label_BankCard.Location = new System.Drawing.Point(26, 113);
+            this.Label_BankCard.Location = new System.Drawing.Point(39, 82);
             this.Label_BankCard.Name = "Label_BankCard";
             this.Label_BankCard.Size = new System.Drawing.Size(152, 15);
             this.Label_BankCard.TabIndex = 0;
@@ -290,6 +305,7 @@ namespace OtdelZasel
             // 
             // tabPage_information
             // 
+            this.tabPage_information.Controls.Add(this.label1);
             this.tabPage_information.Controls.Add(this.label_Cipher);
             this.tabPage_information.Controls.Add(this.label_ActiveKey);
             this.tabPage_information.Controls.Add(this.dataGridView_livingInfo);
@@ -305,7 +321,7 @@ namespace OtdelZasel
             // label_Cipher
             // 
             this.label_Cipher.AutoSize = true;
-            this.label_Cipher.Location = new System.Drawing.Point(193, 444);
+            this.label_Cipher.Location = new System.Drawing.Point(568, 27);
             this.label_Cipher.Name = "label_Cipher";
             this.label_Cipher.Size = new System.Drawing.Size(91, 15);
             this.label_Cipher.TabIndex = 2;
@@ -314,7 +330,7 @@ namespace OtdelZasel
             // label_ActiveKey
             // 
             this.label_ActiveKey.AutoSize = true;
-            this.label_ActiveKey.Location = new System.Drawing.Point(20, 444);
+            this.label_ActiveKey.Location = new System.Drawing.Point(395, 27);
             this.label_ActiveKey.Name = "label_ActiveKey";
             this.label_ActiveKey.Size = new System.Drawing.Size(155, 15);
             this.label_ActiveKey.TabIndex = 1;
@@ -325,11 +341,11 @@ namespace OtdelZasel
             this.dataGridView_livingInfo.AllowUserToAddRows = false;
             this.dataGridView_livingInfo.AllowUserToDeleteRows = false;
             this.dataGridView_livingInfo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView_livingInfo.Location = new System.Drawing.Point(6, 6);
+            this.dataGridView_livingInfo.Location = new System.Drawing.Point(6, 50);
             this.dataGridView_livingInfo.Name = "dataGridView_livingInfo";
             this.dataGridView_livingInfo.ReadOnly = true;
             this.dataGridView_livingInfo.RowTemplate.Height = 25;
-            this.dataGridView_livingInfo.Size = new System.Drawing.Size(925, 417);
+            this.dataGridView_livingInfo.Size = new System.Drawing.Size(925, 523);
             this.dataGridView_livingInfo.TabIndex = 0;
             // 
             // label_write_reason
@@ -358,6 +374,60 @@ namespace OtdelZasel
             this.label_CitizenFIO.Size = new System.Drawing.Size(0, 20);
             this.label_CitizenFIO.TabIndex = 2;
             // 
+            // tabPage_PetitionsRMassages
+            // 
+            this.tabPage_PetitionsRMassages.Controls.Add(this.label_answerOfPetitions);
+            this.tabPage_PetitionsRMassages.Controls.Add(this.dataGridView_PetitionRMessages);
+            this.tabPage_PetitionsRMassages.Location = new System.Drawing.Point(4, 24);
+            this.tabPage_PetitionsRMassages.Name = "tabPage_PetitionsRMassages";
+            this.tabPage_PetitionsRMassages.Size = new System.Drawing.Size(937, 579);
+            this.tabPage_PetitionsRMassages.TabIndex = 4;
+            this.tabPage_PetitionsRMassages.Text = "Ответы на заявления";
+            this.tabPage_PetitionsRMassages.UseVisualStyleBackColor = true;
+            this.tabPage_PetitionsRMassages.Enter += new System.EventHandler(this.tabPage_PetitionsRMassages_Enter);
+            // 
+            // dataGridView_PetitionRMessages
+            // 
+            this.dataGridView_PetitionRMessages.AllowUserToAddRows = false;
+            this.dataGridView_PetitionRMessages.AllowUserToDeleteRows = false;
+            this.dataGridView_PetitionRMessages.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView_PetitionRMessages.Location = new System.Drawing.Point(9, 39);
+            this.dataGridView_PetitionRMessages.Name = "dataGridView_PetitionRMessages";
+            this.dataGridView_PetitionRMessages.ReadOnly = true;
+            this.dataGridView_PetitionRMessages.RowTemplate.Height = 25;
+            this.dataGridView_PetitionRMessages.Size = new System.Drawing.Size(925, 417);
+            this.dataGridView_PetitionRMessages.TabIndex = 1;
+            // 
+            // label_answerOfPetitions
+            // 
+            this.label_answerOfPetitions.AutoSize = true;
+            this.label_answerOfPetitions.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label_answerOfPetitions.Location = new System.Drawing.Point(9, 16);
+            this.label_answerOfPetitions.Name = "label_answerOfPetitions";
+            this.label_answerOfPetitions.Size = new System.Drawing.Size(258, 20);
+            this.label_answerOfPetitions.TabIndex = 4;
+            this.label_answerOfPetitions.Text = "Список заявлений и ответов на них";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(17, 27);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(227, 20);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Список записей о проживании";
+            // 
+            // label_ОплатаЗаПроживание
+            // 
+            this.label_ОплатаЗаПроживание.AutoSize = true;
+            this.label_ОплатаЗаПроживание.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label_ОплатаЗаПроживание.Location = new System.Drawing.Point(39, 31);
+            this.label_ОплатаЗаПроживание.Name = "label_ОплатаЗаПроживание";
+            this.label_ОплатаЗаПроживание.Size = new System.Drawing.Size(191, 20);
+            this.label_ОплатаЗаПроживание.TabIndex = 11;
+            this.label_ОплатаЗаПроживание.Text = "Заплатить за проживание";
+            // 
             // CitizenWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -382,6 +452,9 @@ namespace OtdelZasel
             this.tabPage_information.ResumeLayout(false);
             this.tabPage_information.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_livingInfo)).EndInit();
+            this.tabPage_PetitionsRMassages.ResumeLayout(false);
+            this.tabPage_PetitionsRMassages.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_PetitionRMessages)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -391,7 +464,7 @@ namespace OtdelZasel
 
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.Button button_send_petiton;
+        private System.Windows.Forms.Button button_sendCheckInPetiton;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Label label_write_petition;
@@ -418,5 +491,9 @@ namespace OtdelZasel
         private System.Windows.Forms.DataGridView dataGridView_livingInfo;
         private System.Windows.Forms.Label label_Cipher;
         private System.Windows.Forms.Label label_ActiveKey;
+        private System.Windows.Forms.TabPage tabPage_PetitionsRMassages;
+        private System.Windows.Forms.Label label_answerOfPetitions;
+        private System.Windows.Forms.DataGridView dataGridView_PetitionRMessages;
+        private System.Windows.Forms.Label label_ОплатаЗаПроживание;
     }
 }
