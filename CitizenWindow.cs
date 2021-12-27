@@ -242,6 +242,10 @@ namespace OtdelZasel
             {
                 label_Cipher.Text = cipher;
             }
+            else
+            {
+                label_Cipher.Text = "Ключ не выдан";
+            }
             //SQL команда
             sql = "select * from livingInformation Where \"ID_Cititzen\" = :id_citizen; ";
             //Подключние команды
