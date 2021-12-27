@@ -58,6 +58,9 @@
             this.dataGridView_CitizensForCheckOut = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
             this.label_EmployeeName = new System.Windows.Forms.Label();
+            this.tabPage_AllLivingCitizens = new System.Windows.Forms.TabPage();
+            this.label7 = new System.Windows.Forms.Label();
+            this.dataGridView_AllLivingCitizens = new System.Windows.Forms.DataGridView();
             this.tabControl_Petitions.SuspendLayout();
             this.tabPage_Petitions.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Petitions)).BeginInit();
@@ -67,6 +70,8 @@
             this.tabPage_ChechOut.SuspendLayout();
             this.groupBox_TypesOfWork.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_CitizensForCheckOut)).BeginInit();
+            this.tabPage_AllLivingCitizens.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_AllLivingCitizens)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl_Petitions
@@ -74,12 +79,12 @@
             this.tabControl_Petitions.Controls.Add(this.tabPage_Petitions);
             this.tabControl_Petitions.Controls.Add(this.tabPage_CheckIn);
             this.tabControl_Petitions.Controls.Add(this.tabPage_ChechOut);
+            this.tabControl_Petitions.Controls.Add(this.tabPage_AllLivingCitizens);
             this.tabControl_Petitions.Location = new System.Drawing.Point(12, 37);
             this.tabControl_Petitions.Name = "tabControl_Petitions";
             this.tabControl_Petitions.SelectedIndex = 0;
             this.tabControl_Petitions.Size = new System.Drawing.Size(1162, 618);
             this.tabControl_Petitions.TabIndex = 0;
-            this.tabControl_Petitions.Selecting += new System.Windows.Forms.TabControlCancelEventHandler(this.tabControl_Petitions_Selecting);
             // 
             // tabPage_Petitions
             // 
@@ -102,6 +107,7 @@
             this.tabPage_Petitions.TabIndex = 0;
             this.tabPage_Petitions.Text = "Заявления";
             this.tabPage_Petitions.UseVisualStyleBackColor = true;
+            this.tabPage_Petitions.Enter += new System.EventHandler(this.tabPage_Petitions_Enter);
             // 
             // label3
             // 
@@ -391,6 +397,40 @@
             this.label_EmployeeName.Size = new System.Drawing.Size(0, 19);
             this.label_EmployeeName.TabIndex = 13;
             // 
+            // tabPage_AllLivingCitizens
+            // 
+            this.tabPage_AllLivingCitizens.Controls.Add(this.dataGridView_AllLivingCitizens);
+            this.tabPage_AllLivingCitizens.Controls.Add(this.label7);
+            this.tabPage_AllLivingCitizens.Location = new System.Drawing.Point(4, 24);
+            this.tabPage_AllLivingCitizens.Name = "tabPage_AllLivingCitizens";
+            this.tabPage_AllLivingCitizens.Size = new System.Drawing.Size(1154, 590);
+            this.tabPage_AllLivingCitizens.TabIndex = 3;
+            this.tabPage_AllLivingCitizens.Text = "Проживающие граждане";
+            this.tabPage_AllLivingCitizens.UseVisualStyleBackColor = true;
+            this.tabPage_AllLivingCitizens.Enter += new System.EventHandler(this.tabPage_AllLivingCitizens_Enter);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label7.Location = new System.Drawing.Point(17, 18);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(237, 21);
+            this.label7.TabIndex = 13;
+            this.label7.Text = "Список проживающих граждан";
+            // 
+            // dataGridView_AllLivingCitizens
+            // 
+            this.dataGridView_AllLivingCitizens.AllowUserToAddRows = false;
+            this.dataGridView_AllLivingCitizens.AllowUserToDeleteRows = false;
+            this.dataGridView_AllLivingCitizens.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView_AllLivingCitizens.Location = new System.Drawing.Point(17, 42);
+            this.dataGridView_AllLivingCitizens.Name = "dataGridView_AllLivingCitizens";
+            this.dataGridView_AllLivingCitizens.ReadOnly = true;
+            this.dataGridView_AllLivingCitizens.RowTemplate.Height = 25;
+            this.dataGridView_AllLivingCitizens.Size = new System.Drawing.Size(1122, 401);
+            this.dataGridView_AllLivingCitizens.TabIndex = 14;
+            // 
             // WorkerWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -415,6 +455,9 @@
             this.groupBox_TypesOfWork.ResumeLayout(false);
             this.groupBox_TypesOfWork.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_CitizensForCheckOut)).EndInit();
+            this.tabPage_AllLivingCitizens.ResumeLayout(false);
+            this.tabPage_AllLivingCitizens.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_AllLivingCitizens)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -451,5 +494,8 @@
         private System.Windows.Forms.GroupBox groupBox_TypesOfWork;
         protected System.Windows.Forms.RadioButton radioButton_WithPetitions;
         protected System.Windows.Forms.RadioButton radioButton_checkOutDebtors;
+        private System.Windows.Forms.TabPage tabPage_AllLivingCitizens;
+        private System.Windows.Forms.DataGridView dataGridView_AllLivingCitizens;
+        private System.Windows.Forms.Label label7;
     }
 }

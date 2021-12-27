@@ -75,10 +75,12 @@ namespace OtdelZasel
             updateUnproccessedPetition();
         }
 
-        private void tabControl_Petitions_Selecting(object sender, TabControlCancelEventArgs e)
+
+        private void tabPage_Petitions_Enter(object sender, EventArgs e)
         {
             updateUnproccessedPetition();
         }
+
         int positionOfText = 4;
         private void dataGridView_Petitions_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -426,6 +428,29 @@ namespace OtdelZasel
         }
 
         #endregion
+
+        private void tabPage_AllLivingCitizens_Enter(object sender, EventArgs e)
+        {
+            try
+            {
+                //Обязательный коннект
+                Connection.getInstance().connection.Open();
+                //SQL команда
+                var sql = @"select * from allLivingCitizens;";
+                //Подключние команды
+                var cmd = new NpgsqlCommand(sql, Connection.getInstance().connection);
+                var dt = new DataTable();
+                dt.Load(cmd.ExecuteReader());
+                Connection.getInstance().connection.Close();
+                dataGridView_AllLivingCitizens.DataSource = null;
+                dataGridView_AllLivingCitizens.DataSource = dt;
+            }
+            catch (Exception ex)
+            {
+                Connection.getInstance().connection.Close();
+                MessageBox.Show("Не удалось загрузить список проживающих граждан: " + ex.Message);
+            }
+        }
 
     }
 }
