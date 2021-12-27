@@ -279,8 +279,8 @@ namespace OtdelZasel
                 dataGridView_PetitionRMessages.DataSource = dt;
                 dataGridView_PetitionRMessages.Columns[0].Width = 340;
                 dataGridView_PetitionRMessages.Columns[3].Width = 340;
-                dataGridView_PetitionRMessages.Columns[1].Width = 80;
-                dataGridView_PetitionRMessages.Columns[2].Width = 80;
+                dataGridView_PetitionRMessages.Columns[1].Width = 95;
+                dataGridView_PetitionRMessages.Columns[2].Width = 90;
             }
             catch (Exception ex)
             {

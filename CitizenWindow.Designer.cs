@@ -41,6 +41,7 @@ namespace OtdelZasel
             this.label_write_PetitionOut = new System.Windows.Forms.Label();
             this.richTextBox_PetitonOut = new System.Windows.Forms.RichTextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.label_ОплатаЗаПроживание = new System.Windows.Forms.Label();
             this.label_Balance2 = new System.Windows.Forms.Label();
             this.label_Balance = new System.Windows.Forms.Label();
             this.button_pay = new System.Windows.Forms.Button();
@@ -51,17 +52,16 @@ namespace OtdelZasel
             this.label_CVV = new System.Windows.Forms.Label();
             this.Label_BankCard = new System.Windows.Forms.Label();
             this.tabPage_information = new System.Windows.Forms.TabPage();
+            this.label1 = new System.Windows.Forms.Label();
             this.label_Cipher = new System.Windows.Forms.Label();
             this.label_ActiveKey = new System.Windows.Forms.Label();
             this.dataGridView_livingInfo = new System.Windows.Forms.DataGridView();
+            this.tabPage_PetitionsRMassages = new System.Windows.Forms.TabPage();
+            this.label_answerOfPetitions = new System.Windows.Forms.Label();
+            this.dataGridView_PetitionRMessages = new System.Windows.Forms.DataGridView();
             this.label_write_reason = new System.Windows.Forms.Label();
             this.label_CitizenName = new System.Windows.Forms.Label();
             this.label_CitizenFIO = new System.Windows.Forms.Label();
-            this.tabPage_PetitionsRMassages = new System.Windows.Forms.TabPage();
-            this.dataGridView_PetitionRMessages = new System.Windows.Forms.DataGridView();
-            this.label_answerOfPetitions = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label_ОплатаЗаПроживание = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage3.SuspendLayout();
@@ -207,6 +207,16 @@ namespace OtdelZasel
             this.tabPage2.UseVisualStyleBackColor = true;
             this.tabPage2.Enter += new System.EventHandler(this.tabPage2_Enter);
             // 
+            // label_ОплатаЗаПроживание
+            // 
+            this.label_ОплатаЗаПроживание.AutoSize = true;
+            this.label_ОплатаЗаПроживание.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label_ОплатаЗаПроживание.Location = new System.Drawing.Point(39, 31);
+            this.label_ОплатаЗаПроживание.Name = "label_ОплатаЗаПроживание";
+            this.label_ОплатаЗаПроживание.Size = new System.Drawing.Size(191, 20);
+            this.label_ОплатаЗаПроживание.TabIndex = 11;
+            this.label_ОплатаЗаПроживание.Text = "Заплатить за проживание";
+            // 
             // label_Balance2
             // 
             this.label_Balance2.AutoSize = true;
@@ -318,6 +328,16 @@ namespace OtdelZasel
             this.tabPage_information.UseVisualStyleBackColor = true;
             this.tabPage_information.Enter += new System.EventHandler(this.tabPage_information_Enter);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(17, 27);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(227, 20);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Список записей о проживании";
+            // 
             // label_Cipher
             // 
             this.label_Cipher.AutoSize = true;
@@ -348,6 +368,40 @@ namespace OtdelZasel
             this.dataGridView_livingInfo.Size = new System.Drawing.Size(925, 523);
             this.dataGridView_livingInfo.TabIndex = 0;
             // 
+            // tabPage_PetitionsRMassages
+            // 
+            this.tabPage_PetitionsRMassages.Controls.Add(this.label_answerOfPetitions);
+            this.tabPage_PetitionsRMassages.Controls.Add(this.dataGridView_PetitionRMessages);
+            this.tabPage_PetitionsRMassages.Location = new System.Drawing.Point(4, 24);
+            this.tabPage_PetitionsRMassages.Name = "tabPage_PetitionsRMassages";
+            this.tabPage_PetitionsRMassages.Size = new System.Drawing.Size(937, 579);
+            this.tabPage_PetitionsRMassages.TabIndex = 4;
+            this.tabPage_PetitionsRMassages.Text = "Ответы на заявления";
+            this.tabPage_PetitionsRMassages.UseVisualStyleBackColor = true;
+            this.tabPage_PetitionsRMassages.Enter += new System.EventHandler(this.tabPage_PetitionsRMassages_Enter);
+            // 
+            // label_answerOfPetitions
+            // 
+            this.label_answerOfPetitions.AutoSize = true;
+            this.label_answerOfPetitions.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label_answerOfPetitions.Location = new System.Drawing.Point(9, 16);
+            this.label_answerOfPetitions.Name = "label_answerOfPetitions";
+            this.label_answerOfPetitions.Size = new System.Drawing.Size(258, 20);
+            this.label_answerOfPetitions.TabIndex = 4;
+            this.label_answerOfPetitions.Text = "Список заявлений и ответов на них";
+            // 
+            // dataGridView_PetitionRMessages
+            // 
+            this.dataGridView_PetitionRMessages.AllowUserToAddRows = false;
+            this.dataGridView_PetitionRMessages.AllowUserToDeleteRows = false;
+            this.dataGridView_PetitionRMessages.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView_PetitionRMessages.Location = new System.Drawing.Point(9, 39);
+            this.dataGridView_PetitionRMessages.Name = "dataGridView_PetitionRMessages";
+            this.dataGridView_PetitionRMessages.ReadOnly = true;
+            this.dataGridView_PetitionRMessages.RowTemplate.Height = 25;
+            this.dataGridView_PetitionRMessages.Size = new System.Drawing.Size(925, 537);
+            this.dataGridView_PetitionRMessages.TabIndex = 1;
+            // 
             // label_write_reason
             // 
             this.label_write_reason.Location = new System.Drawing.Point(0, 0);
@@ -373,60 +427,6 @@ namespace OtdelZasel
             this.label_CitizenFIO.Name = "label_CitizenFIO";
             this.label_CitizenFIO.Size = new System.Drawing.Size(0, 20);
             this.label_CitizenFIO.TabIndex = 2;
-            // 
-            // tabPage_PetitionsRMassages
-            // 
-            this.tabPage_PetitionsRMassages.Controls.Add(this.label_answerOfPetitions);
-            this.tabPage_PetitionsRMassages.Controls.Add(this.dataGridView_PetitionRMessages);
-            this.tabPage_PetitionsRMassages.Location = new System.Drawing.Point(4, 24);
-            this.tabPage_PetitionsRMassages.Name = "tabPage_PetitionsRMassages";
-            this.tabPage_PetitionsRMassages.Size = new System.Drawing.Size(937, 579);
-            this.tabPage_PetitionsRMassages.TabIndex = 4;
-            this.tabPage_PetitionsRMassages.Text = "Ответы на заявления";
-            this.tabPage_PetitionsRMassages.UseVisualStyleBackColor = true;
-            this.tabPage_PetitionsRMassages.Enter += new System.EventHandler(this.tabPage_PetitionsRMassages_Enter);
-            // 
-            // dataGridView_PetitionRMessages
-            // 
-            this.dataGridView_PetitionRMessages.AllowUserToAddRows = false;
-            this.dataGridView_PetitionRMessages.AllowUserToDeleteRows = false;
-            this.dataGridView_PetitionRMessages.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView_PetitionRMessages.Location = new System.Drawing.Point(9, 39);
-            this.dataGridView_PetitionRMessages.Name = "dataGridView_PetitionRMessages";
-            this.dataGridView_PetitionRMessages.ReadOnly = true;
-            this.dataGridView_PetitionRMessages.RowTemplate.Height = 25;
-            this.dataGridView_PetitionRMessages.Size = new System.Drawing.Size(925, 417);
-            this.dataGridView_PetitionRMessages.TabIndex = 1;
-            // 
-            // label_answerOfPetitions
-            // 
-            this.label_answerOfPetitions.AutoSize = true;
-            this.label_answerOfPetitions.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label_answerOfPetitions.Location = new System.Drawing.Point(9, 16);
-            this.label_answerOfPetitions.Name = "label_answerOfPetitions";
-            this.label_answerOfPetitions.Size = new System.Drawing.Size(258, 20);
-            this.label_answerOfPetitions.TabIndex = 4;
-            this.label_answerOfPetitions.Text = "Список заявлений и ответов на них";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(17, 27);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(227, 20);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Список записей о проживании";
-            // 
-            // label_ОплатаЗаПроживание
-            // 
-            this.label_ОплатаЗаПроживание.AutoSize = true;
-            this.label_ОплатаЗаПроживание.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label_ОплатаЗаПроживание.Location = new System.Drawing.Point(39, 31);
-            this.label_ОплатаЗаПроживание.Name = "label_ОплатаЗаПроживание";
-            this.label_ОплатаЗаПроживание.Size = new System.Drawing.Size(191, 20);
-            this.label_ОплатаЗаПроживание.TabIndex = 11;
-            this.label_ОплатаЗаПроживание.Text = "Заплатить за проживание";
             // 
             // CitizenWindow
             // 
