@@ -262,5 +262,32 @@ namespace OtdelZasel
             dataGridView_livingInfo.Columns[0].Visible = false;
         }
 
+        private void tabPage_PetitionsRMassages_Enter(object sender, EventArgs e)
+        {
+
+            try
+            {
+                Connection.getInstance().connection.Open();
+                var sql = "select * from getPetitionsAndRMessages(:id_citizen);";
+                //Подключние команды
+                var cmd = new NpgsqlCommand(sql, Connection.getInstance().connection);
+                cmd.Parameters.AddWithValue("id_citizen", ID_Citizen);
+                var dt = new DataTable();
+                dt.Load(cmd.ExecuteReader());
+                Connection.getInstance().connection.Close();
+                dataGridView_PetitionRMessages.DataSource = null;
+                dataGridView_PetitionRMessages.DataSource = dt;
+                dataGridView_PetitionRMessages.Columns[0].Width = 340;
+                dataGridView_PetitionRMessages.Columns[3].Width = 340;
+                dataGridView_PetitionRMessages.Columns[1].Width = 80;
+                dataGridView_PetitionRMessages.Columns[2].Width = 80;
+            }
+            catch (Exception ex)
+            {
+                Connection.getInstance().connection.Close();
+                MessageBox.Show("Не удалось загрузить заявления и ответы на них: " + ex.Message);
+            }
+
+        }
     }
 }
