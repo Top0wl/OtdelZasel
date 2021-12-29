@@ -56,11 +56,13 @@
             this.label5 = new System.Windows.Forms.Label();
             this.button_CheckOut = new System.Windows.Forms.Button();
             this.dataGridView_CitizensForCheckOut = new System.Windows.Forms.DataGridView();
+            this.tabPage_AllLivingCitizens = new System.Windows.Forms.TabPage();
+            this.dataGridView_AllLivingCitizens = new System.Windows.Forms.DataGridView();
+            this.label7 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label_EmployeeName = new System.Windows.Forms.Label();
-            this.tabPage_AllLivingCitizens = new System.Windows.Forms.TabPage();
-            this.label7 = new System.Windows.Forms.Label();
-            this.dataGridView_AllLivingCitizens = new System.Windows.Forms.DataGridView();
+            this.saveFileDialog_LivingCitizens = new System.Windows.Forms.SaveFileDialog();
+            this.button_SaveLivingCitizens = new System.Windows.Forms.Button();
             this.tabControl_Petitions.SuspendLayout();
             this.tabPage_Petitions.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Petitions)).BeginInit();
@@ -378,6 +380,41 @@
             this.dataGridView_CitizensForCheckOut.TabIndex = 0;
             this.dataGridView_CitizensForCheckOut.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CitizensForCheckOut_CellClick);
             // 
+            // tabPage_AllLivingCitizens
+            // 
+            this.tabPage_AllLivingCitizens.Controls.Add(this.button_SaveLivingCitizens);
+            this.tabPage_AllLivingCitizens.Controls.Add(this.dataGridView_AllLivingCitizens);
+            this.tabPage_AllLivingCitizens.Controls.Add(this.label7);
+            this.tabPage_AllLivingCitizens.Location = new System.Drawing.Point(4, 24);
+            this.tabPage_AllLivingCitizens.Name = "tabPage_AllLivingCitizens";
+            this.tabPage_AllLivingCitizens.Size = new System.Drawing.Size(1154, 590);
+            this.tabPage_AllLivingCitizens.TabIndex = 3;
+            this.tabPage_AllLivingCitizens.Text = "Проживающие граждане";
+            this.tabPage_AllLivingCitizens.UseVisualStyleBackColor = true;
+            this.tabPage_AllLivingCitizens.Enter += new System.EventHandler(this.tabPage_AllLivingCitizens_Enter);
+            // 
+            // dataGridView_AllLivingCitizens
+            // 
+            this.dataGridView_AllLivingCitizens.AllowUserToAddRows = false;
+            this.dataGridView_AllLivingCitizens.AllowUserToDeleteRows = false;
+            this.dataGridView_AllLivingCitizens.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView_AllLivingCitizens.Location = new System.Drawing.Point(17, 42);
+            this.dataGridView_AllLivingCitizens.Name = "dataGridView_AllLivingCitizens";
+            this.dataGridView_AllLivingCitizens.ReadOnly = true;
+            this.dataGridView_AllLivingCitizens.RowTemplate.Height = 25;
+            this.dataGridView_AllLivingCitizens.Size = new System.Drawing.Size(1122, 401);
+            this.dataGridView_AllLivingCitizens.TabIndex = 14;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label7.Location = new System.Drawing.Point(17, 18);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(237, 21);
+            this.label7.TabIndex = 13;
+            this.label7.Text = "Список проживающих граждан";
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -397,39 +434,16 @@
             this.label_EmployeeName.Size = new System.Drawing.Size(0, 19);
             this.label_EmployeeName.TabIndex = 13;
             // 
-            // tabPage_AllLivingCitizens
+            // button_SaveLivingCitizens
             // 
-            this.tabPage_AllLivingCitizens.Controls.Add(this.dataGridView_AllLivingCitizens);
-            this.tabPage_AllLivingCitizens.Controls.Add(this.label7);
-            this.tabPage_AllLivingCitizens.Location = new System.Drawing.Point(4, 24);
-            this.tabPage_AllLivingCitizens.Name = "tabPage_AllLivingCitizens";
-            this.tabPage_AllLivingCitizens.Size = new System.Drawing.Size(1154, 590);
-            this.tabPage_AllLivingCitizens.TabIndex = 3;
-            this.tabPage_AllLivingCitizens.Text = "Проживающие граждане";
-            this.tabPage_AllLivingCitizens.UseVisualStyleBackColor = true;
-            this.tabPage_AllLivingCitizens.Enter += new System.EventHandler(this.tabPage_AllLivingCitizens_Enter);
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label7.Location = new System.Drawing.Point(17, 18);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(237, 21);
-            this.label7.TabIndex = 13;
-            this.label7.Text = "Список проживающих граждан";
-            // 
-            // dataGridView_AllLivingCitizens
-            // 
-            this.dataGridView_AllLivingCitizens.AllowUserToAddRows = false;
-            this.dataGridView_AllLivingCitizens.AllowUserToDeleteRows = false;
-            this.dataGridView_AllLivingCitizens.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView_AllLivingCitizens.Location = new System.Drawing.Point(17, 42);
-            this.dataGridView_AllLivingCitizens.Name = "dataGridView_AllLivingCitizens";
-            this.dataGridView_AllLivingCitizens.ReadOnly = true;
-            this.dataGridView_AllLivingCitizens.RowTemplate.Height = 25;
-            this.dataGridView_AllLivingCitizens.Size = new System.Drawing.Size(1122, 401);
-            this.dataGridView_AllLivingCitizens.TabIndex = 14;
+            this.button_SaveLivingCitizens.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button_SaveLivingCitizens.Location = new System.Drawing.Point(950, 6);
+            this.button_SaveLivingCitizens.Name = "button_SaveLivingCitizens";
+            this.button_SaveLivingCitizens.Size = new System.Drawing.Size(189, 33);
+            this.button_SaveLivingCitizens.TabIndex = 15;
+            this.button_SaveLivingCitizens.Text = "Сохранить отчет";
+            this.button_SaveLivingCitizens.UseVisualStyleBackColor = true;
+            this.button_SaveLivingCitizens.Click += new System.EventHandler(this.button_SaveLivingCitizens_Click);
             // 
             // WorkerWindow
             // 
@@ -497,5 +511,7 @@
         private System.Windows.Forms.TabPage tabPage_AllLivingCitizens;
         private System.Windows.Forms.DataGridView dataGridView_AllLivingCitizens;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button button_SaveLivingCitizens;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog_LivingCitizens;
     }
 }

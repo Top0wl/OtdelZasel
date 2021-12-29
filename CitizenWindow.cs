@@ -264,7 +264,6 @@ namespace OtdelZasel
 
         private void tabPage_PetitionsRMassages_Enter(object sender, EventArgs e)
         {
-
             try
             {
                 Connection.getInstance().connection.Open();
@@ -287,7 +286,7 @@ namespace OtdelZasel
                 Connection.getInstance().connection.Close();
                 MessageBox.Show("Не удалось загрузить заявления и ответы на них: " + ex.Message);
             }
-
         }
     }
 }
+

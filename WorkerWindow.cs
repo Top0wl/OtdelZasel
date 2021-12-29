@@ -2,14 +2,14 @@
 using System;
 using System.Data;
 using System.Windows.Forms;
+using Syncfusion.XlsIO;
+using System.IO;
 
 namespace OtdelZasel
 {
     public partial class WorkerWindow : Form
     {
-
         long id_employee = 0;
-
         protected void setEmployeeName(long id_employee)
         {
             Connection.getInstance().connection.Open();
@@ -51,7 +51,7 @@ namespace OtdelZasel
                 var sql = @"select * from UnProcessedPetitions;";
                 //Подключние команды
                 var cmd = new NpgsqlCommand(sql, Connection.getInstance().connection);
-                var dt = new DataTable();
+                var dt = new System.Data.DataTable();
                 dt.Load(cmd.ExecuteReader());
                 
                 Connection.getInstance().connection.Close();
@@ -229,7 +229,7 @@ namespace OtdelZasel
                     var sql = @"select * from UnProcessedCheckOutPetitions;";
                     //Подключние команды
                     var cmd = new NpgsqlCommand(sql, Connection.getInstance().connection);
-                    var dt = new DataTable();
+                    var dt = new System.Data.DataTable();
                     dt.Load(cmd.ExecuteReader());
 
                     Connection.getInstance().connection.Close();
@@ -256,7 +256,7 @@ namespace OtdelZasel
                     var sql = @"select * from debtors;";
                     //Подключние команды
                     var cmd = new NpgsqlCommand(sql, Connection.getInstance().connection);
-                    var dt = new DataTable();
+                    var dt = new System.Data.DataTable();
                     dt.Load(cmd.ExecuteReader());
 
                     Connection.getInstance().connection.Close();
@@ -356,7 +356,7 @@ namespace OtdelZasel
                 var sql = "select * from \"FreePlaces\";";
                 //Подключние команды
                 var cmd = new NpgsqlCommand(sql, Connection.getInstance().connection);
-                var dt = new DataTable();
+                var dt = new System.Data.DataTable();
                 dt.Load(cmd.ExecuteReader());
                 Connection.getInstance().connection.Close();
                 dataGridView_FreePlaces.DataSource = null;
@@ -380,7 +380,7 @@ namespace OtdelZasel
                 var sql = @"select * from unprocessedcheckinpetitions;";
                 //Подключние команды
                 var cmd = new NpgsqlCommand(sql, Connection.getInstance().connection);
-                var dt = new DataTable();
+                var dt = new System.Data.DataTable();
                 dt.Load(cmd.ExecuteReader());
                 Connection.getInstance().connection.Close();
                 dataGridView_CitizensForCheckIn.DataSource = null;
@@ -439,7 +439,7 @@ namespace OtdelZasel
                 var sql = @"select * from allLivingCitizens;";
                 //Подключние команды
                 var cmd = new NpgsqlCommand(sql, Connection.getInstance().connection);
-                var dt = new DataTable();
+                var dt = new System.Data.DataTable();
                 dt.Load(cmd.ExecuteReader());
                 Connection.getInstance().connection.Close();
                 dataGridView_AllLivingCitizens.DataSource = null;
@@ -452,5 +452,38 @@ namespace OtdelZasel
             }
         }
 
+        private void button_SaveLivingCitizens_Click(object sender, EventArgs e)
+        {
+            saveFileDialog_LivingCitizens = new SaveFileDialog();
+            saveFileDialog_LivingCitizens.Filter = "Excel|*.xls;*.xlsx;";
+
+            if (saveFileDialog_LivingCitizens.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                var fileName = saveFileDialog_LivingCitizens.FileName;
+
+                using (ExcelEngine excelEngine = new ExcelEngine())
+                {
+                    IApplication application = excelEngine.Excel;
+                    application.DefaultVersion = ExcelVersion.Excel2016;
+                    IWorkbook workbook = application.Workbooks.Create(1);
+                    IWorksheet worksheet = workbook.Worksheets[0];
+                    //Adding text to a cell
+                    for (int i = 1; i < dataGridView_AllLivingCitizens.Columns.Count + 1; i++)
+                    {
+                        worksheet.Range[1, i].Text = dataGridView_AllLivingCitizens.Columns[i - 1].HeaderText;
+                    }
+                    worksheet.Name = "Проживающие граждане";
+                    for (int i = 0; i < dataGridView_AllLivingCitizens.Rows.Count; i++)
+                    {
+                        for (int j = 0; j < dataGridView_AllLivingCitizens.Columns.Count; j++)
+                        {
+                            worksheet.Range[i + 2, j + 1].Text = dataGridView_AllLivingCitizens.Rows[i].Cells[j].Value.ToString();
+                        }
+                    }
+                    application.Save(fileName);
+                }
+            }
+        }
     }
 }
+
